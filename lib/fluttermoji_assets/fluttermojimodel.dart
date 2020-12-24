@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-
+/// Maps attribute keys to the attribute value list
 final Map<String, FluttermojiPropertyItem> fluttermojiProperties = {
   "style" :  FluttermojiPropertyItem(title:"Style",property:FluttermojiStyle ),
   "topType": FluttermojiPropertyItem(title: "Hair", property: TopType),

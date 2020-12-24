@@ -1,3 +1,4 @@
+/// SVG strings for skin colours
 const Map<String,dynamic> skin={
   'Tanned':'''
   <g id="Skin/Tanned" mask="url(#mask-6)" fill="#FD9841">

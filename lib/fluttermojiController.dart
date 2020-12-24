@@ -74,6 +74,8 @@ class FluttermojiController extends GetxController {
     update();
   }
 
+ 
+
   /// converts String that contains [Map<String,int>] to [String] fluttermoji
   String getFluttermojiFromOptions() {
     String _fluttermojiStyle =

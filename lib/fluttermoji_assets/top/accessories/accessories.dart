@@ -1,9 +1,4 @@
-const String path1 = "react-path-jkajbdjk";
-const String path2 = "react-path-sfkjbfb";
-const String filter1 = "react-filter-jbsdfh";
-const String linearGradient1 = "react-linear-gradient-kbgkgtn";
-const String linearGradient2 = "react-linear-gradient-bdskt";
-
+/// SVG strings for acessories
 Map<String, dynamic> accessories = {
   "Nothing": '''
         <g></g>

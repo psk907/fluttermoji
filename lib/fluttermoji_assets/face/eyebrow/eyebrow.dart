@@ -1,3 +1,4 @@
+/// SVG strings for eyebrows
 Map<String, dynamic> eyebrow = {
   'Angry': '''
   <g

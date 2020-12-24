@@ -63,8 +63,8 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
     //final double mediumfont = size.height * 0.038;
     List<Widget> attributeRows = new List<Widget>();
     List<Widget> navbarWidgets = new List<Widget>();
-    Color appbarcolor = (!isDarkMode) ? Colors.white : Colors.grey[600];
-    Color bgcolor = (!isDarkMode) ? Color(0xFFF1F1F1) : Colors.grey[800];
+    Color _appbarcolor = (!isDarkMode) ? Colors.white : Colors.grey[600];
+    Color _bgcolor = (!isDarkMode) ? Color(0xFFF1F1F1) : Colors.grey[800];
 
     attributes.forEach((attribute) {
       if (!fluttermojiController.selectedIndexes.containsKey(attribute.key)) {
@@ -95,7 +95,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
           flex: 2,
           child: Container(
             width: double.infinity,
-            color: appbarcolor,
+            color: _appbarcolor,
           
             child: Center(
               child: Text(
@@ -177,13 +177,13 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
                 borderRadius: BorderRadius.circular(18),
                 child: Scaffold(
                   key: ValueKey("Overview"),
-                  backgroundColor: bgcolor,
+                  backgroundColor: _bgcolor,
                   body: TabBarView(
                      // physics: PageScrollPhysics(),
                       controller: tabController,
                       children: attributeRows),
                   bottomNavigationBar: Container(
-                    color: appbarcolor, //Colors.grey[400],
+                    color: _appbarcolor, //Colors.grey[400],
                     child: TabBar(
                         controller: tabController,
                         isScrollable: true,

@@ -4,11 +4,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'fluttermojiController.dart';
 
-/// This widget renders the Fluttermoji on screen
-/// 
+/// This widget renders the Fluttermoji of the user on screen
+///
 /// Accepts a [radius] which defaults to 75.0
 /// and a [backgroundColor] which defaults to blueAccent
-/// 
+///
 /// Advice the users to set up their Fluttermoji first to avoid unexpected issues.
 class FluttermojiCircleAvatar extends StatelessWidget {
   final double radius;

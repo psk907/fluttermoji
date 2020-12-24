@@ -1,5 +1,4 @@
-const String mask1 = "react-mask-jbgysq";
-const String filter1 = "react-filter-uyrew";
+/// SVG strings for mouths
 Map<String, dynamic> mouth = {
   "Concerned": '''
         <g id="Mouth/Concerned" transform="translate(2.000000, 52.000000)">

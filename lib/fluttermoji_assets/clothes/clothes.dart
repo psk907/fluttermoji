@@ -1,3 +1,4 @@
+/// SVG strings and generators for Clothes
 class Clothes {
   static Map<String, dynamic> clotheColor = {
       "Black": "#262E33",

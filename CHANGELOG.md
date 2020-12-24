@@ -1,3 +1,13 @@
+## [0.1.0] - 24/12/2020
+
+* Added documentation to many APIs and to the README.md as well.
+* Created new utility functions to allow sharing of Fluttermojis to server/DB and decoding them for render using flutter_svg package.
+* Fixed the bug on loading Fluttermoji on first launch.
+* Fixed standalone customizer issues.
+* Description updates
+* Other minor changes and fixes.
+
+
 ## [0.0.1] - 23/12/2020
 
 * Initial Release - documentation and instructions pending

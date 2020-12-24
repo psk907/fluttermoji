@@ -1,3 +1,4 @@
+/// SVG strings and generators for hairstyle
 class HairStyle{
 static Map<String,dynamic> hairColor={
 'Auburn':"#A55728",

@@ -1,3 +1,4 @@
+/// SVG strings for style of avatar
 const fluttermojiStyle = {
   "Transparent": "",
   "Circle": '''

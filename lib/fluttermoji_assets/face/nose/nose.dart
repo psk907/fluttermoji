@@ -1,3 +1,4 @@
+/// SVG strings for the nose
 Map<String, dynamic> nose = {
   'Default': '''
   <g id="Nose/Default" transform="translate(28.000000, 40.000000)" opacity="0.16">

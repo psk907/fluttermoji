@@ -1,3 +1,4 @@
+/// SVG strings for eyes
 Map<String, dynamic> eyes = {
   'Close': '''
   <g
