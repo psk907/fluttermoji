@@ -1,9 +1,12 @@
 
-# Fluttermoji  <img src="https://user-images.githubusercontent.com/37346450/103101129-1b9a2100-463c-11eb-8a94-b6fbe44bf00f.png" align="right" height="200" />
+
+# Fluttermoji  <img src="https://user-images.githubusercontent.com/37346450/103101129-1b9a2100-463c-11eb-8a94-b6fbe44bf00f.png" align="right" height="150" />
 
 A light-weight and highly customizable SVG graphic set for Flutter, which provides a Customizer Widget, CircleAvatar and other utility functions.
 
+
 This package provides you two easy-to-use widgets -
+
 | Name | Returns | Description | Screenshot | 
 |-------- | ------------- | ----------------|--------------- |
 |FluttermojiCircleAvatar |Widget | Use your fluttermoji anywhere in your Flutter app with a simple customizable widget.| ![1608830483994](https://user-images.githubusercontent.com/37346450/103071632-009ec100-45ea-11eb-97c4-96c9ec67e204.gif)
@@ -31,11 +34,11 @@ Use the given utility functions to send and receive Fluttermoji data from your s
 	```
 	import 'package:fluttermoji/fluttermoji.dart';
 	```
-3. Add the FluttermojiCircleAvatar widget to display your fluttermoji where needed.
+3. Add the FluttermojiCircleAvatar widget to display your Fluttermoji where needed.
 	```
 	FluttermojiCircleAvatar();
 	```
-4. To allow your users to personalize their fluttermoji, add the following widget.
+4. To allow your users to personalize their Fluttermoji, add the following widget and pair it with the above one in your page.
 	```
 	FluttermojiCustomizer();
 	```
@@ -49,7 +52,6 @@ The package offers a ton of features in the simplest way possible, however there
 - FluttermojiCustomizer updates the preview in real-time however changes must be saved by tapping the Save icon built into the widget itself.
 - FluttermojiCustomizer uses a Scaffold whose height is set to _0.4*screen height_ by default, if you do not pass a value to the ```scaffoldHeight``` property make sure to place the widget properly.
 - If you plan on using FluttermojiCustomizer in Landscape mode, manually pass in the desired width for the widget in the ```scaffoldWidth``` property.
-
 - The Fluttermoji's attributes are saved to local app storage. Clearing app data would mean clearing these attributes as well.
 
 ## Attributions
@@ -57,4 +59,9 @@ My mention goes to the following sources for their respective assets used in thi
 
 - SVG assets from [Fang-Pen Lin](getAvataars.com)'s  [GitHub repository](https://github.com/fangpenlin/avataaars-generator)
 - Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-	
+
+## Community
+If you find any issues or have some feedback, please raise the same on the GitHub repo or contact me directly.
+Do leave a thumbs up if you liked it.
+
+<strong>Happy Fluttering ; )</strong>
