@@ -1,7 +1,7 @@
 name: fluttermoji
 description: A highly customizable SVG graphic set for Flutter
-version: 0.0.1
-author: Suraj Kumar
+version: 0.0.2
+# author: Suraj Kumar
 homepage: https://github.com/psk907/fluttermoji
 
 environment:
@@ -11,8 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^0.5.12+4
-  flutter_svg: null
-  provider: ^4.3.2+3
+  flutter_svg: ^0.19.1
   get: ^3.24.0
 
 dev_dependencies:
