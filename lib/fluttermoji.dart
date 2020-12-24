@@ -1,5 +1,5 @@
 library fluttermoji;
 
-export './fluttermojiEditor.dart';
+export './fluttermojiCustomizer.dart';
 export './fluttermojiCircleAvatar.dart';
 export './fluttermojiController.dart';

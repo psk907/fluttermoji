@@ -35,12 +35,24 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
         centerTitle: true,
+        actions: [
+          FlatButton(
+            child: Text("Next"),
+            onPressed: () {
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => NewPage()));
+            },
+          )
+        ],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            FluttermojiCircleAvatar(backgroundColor: Colors.grey[200],radius: 100,),
+            FluttermojiCircleAvatar(
+              backgroundColor: Colors.grey[200],
+              radius: 100,
+            ),
             FluttermojiCustomizer(),
           ],
         ),
@@ -48,3 +60,30 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+class NewPage extends StatelessWidget {
+  const NewPage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            FluttermojiCircleAvatar(
+              backgroundColor: Colors.grey[200],
+              radius: 100,
+            ),
+            FluttermojiCustomizer(
+              // scaffoldHeight: 200,
+              // scaffoldWidth: 200,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+

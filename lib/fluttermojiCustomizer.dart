@@ -3,9 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'fluttermoji_assets/fluttermojimodel.dart';
 import 'package:get/get.dart';
-
 import 'fluttermojiController.dart';
 
+/// This widget provides a UI for customizing the Fluttermoji
+/// 
+/// Accepts a [outerTextTitle] which defaults to "Customize:"
+/// 
+/// Accepts an optional [scaffoldHeight] and [scaffoldWidth].
+/// When using in landscape mode, it is advised to pass a [scaffoldWidth] to the widget
+/// 
+/// Adapts to the enclosing MaterialApp's dark theme settings
+/// 
+/// It is advised that a [FluttermojiCircleAvatar] is also present in the same page.
 class FluttermojiCustomizer extends StatefulWidget {
   final String outerTitleText;
   final double scaffoldHeight;
@@ -31,9 +40,12 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
   @override
   void initState() {
     super.initState();
+      var _fluttermojiController ; 
+      Get.put(FluttermojiController());
+      _fluttermojiController = Get.find<FluttermojiController>();
     setState(() {
-      fluttermojiController = Get.find<FluttermojiController>();
       tabController = new TabController(length: 11, vsync: this);
+      fluttermojiController=_fluttermojiController;
     });
   }
 
@@ -49,8 +61,8 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     Color iconColor = (!isDarkMode) ? Colors.grey[600] : Colors.white;
     //final double mediumfont = size.height * 0.038;
-    List<Widget> attributeRows = new List();
-    List<Widget> navbarWidgets = new List();
+    List<Widget> attributeRows = new List<Widget>();
+    List<Widget> navbarWidgets = new List<Widget>();
     Color appbarcolor = (!isDarkMode) ? Colors.white : Colors.grey[600];
     Color bgcolor = (!isDarkMode) ? Color(0xFFF1F1F1) : Colors.grey[800];
 
@@ -65,7 +77,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
       if (attributeListLength < 12)
         gridCrossAxisCount = 3;
       else if (attributeListLength < 9) gridCrossAxisCount = 2;
-      Widget titleWidget = Padding(
+      Widget bottomNavWidget = Padding(
           padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 12),
           child: SvgPicture.asset(
             attribute.iconAsset,
@@ -147,7 +159,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
         ),
       ]);
       attributeRows.add(_row);
-      navbarWidgets.add(titleWidget);
+      navbarWidgets.add(bottomNavWidget);
     });
 
     return Stack(
@@ -277,6 +289,9 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
             height: widget.scaffoldHeight > 0
                 ? widget.scaffoldHeight
                 : size.height * heightFactor,
+                width: widget.scaffoldWidth > 0
+                ? widget.scaffoldWidth
+                : size.width,
             child: expandedCard(cardTitle: "Customize", attributes: [
               /*  ExpandedFluttermojiCardItem(
                         iconAsset: "attributeicons/hair.svg",

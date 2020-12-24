@@ -1,9 +1,7 @@
 import 'dart:convert';
-
 import './fluttermoji_assets/style.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'fluttermoji_assets/fluttermojimodel.dart';
 import 'fluttermoji_assets/clothes/clothes.dart';
 import 'fluttermoji_assets/face/eyebrow/eyebrow.dart';
@@ -15,6 +13,11 @@ import 'fluttermoji_assets/top/accessories/accessories.dart';
 import 'fluttermoji_assets/top/facialHair/facialHair.dart';
 import 'fluttermoji_assets/top/hairStyles/hairStyle.dart';
 
+/// Brains of the Fluttermoji package
+/// 
+/// Built using the getX architecture to allow the two widgets to communicate with each other
+/// 
+/// Exposes certain static functions for use by the developer
 class FluttermojiController extends GetxController {
   var fluttermoji = "".obs;
   Map<String, dynamic> selectedIndexes = new Map<String, dynamic>();
@@ -22,7 +25,6 @@ class FluttermojiController extends GetxController {
   void onInit() {
     // called immediately after the widget is allocated memory
     init();
-
     super.onInit();
   }
 
@@ -34,9 +36,7 @@ class FluttermojiController extends GetxController {
     update();
   }
 
-  /*
-  Adds fluttermoji new string to fluttermoji in GetX Controller
-  */
+  ///Adds fluttermoji new string to fluttermoji in GetX Controller
   void updatePreview({
     String fluttermojiNew = '',
   }) {
@@ -45,6 +45,13 @@ class FluttermojiController extends GetxController {
     }
     fluttermoji.value = fluttermojiNew;
     update();
+  }
+
+  
+  String _getFluttermojiProperty(String type) {
+    return fluttermojiProperties[type]
+        .property
+        .elementAt(selectedIndexes[type] as int);
   }
 
   ///
@@ -65,12 +72,6 @@ class FluttermojiController extends GetxController {
     await pref.setString(
         'fluttermojiSelectedOptions', jsonEncode(selectedIndexes));
     update();
-  }
-
-  String _getFluttermojiProperty(String type) {
-    return fluttermojiProperties[type]
-        .property
-        .elementAt(selectedIndexes[type] as int);
   }
 
   /// converts String that contains [Map<String,int>] to [String] fluttermoji
@@ -134,7 +135,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
   Future<Map<String, int>> getFluttermojiOptions() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     String _fluttermojiOptions = pref.getString('fluttermojiSelectedOptions');
-    if (_fluttermojiOptions == null) {
+    if (_fluttermojiOptions == null || _fluttermojiOptions == '') {
       Map<String, int> _fluttermojiOptionsMap = {
         'topType': 4,
         'accessoriesType': 0,
@@ -153,10 +154,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
       await pref.setString(
           'fluttermojiSelectedOptions', jsonEncode(_fluttermojiOptionsMap));
       selectedIndexes = _fluttermojiOptionsMap;
+
       update();
       return _fluttermojiOptionsMap;
     }
-    selectedIndexes = jsonDecode(_fluttermojiOptions);
+    selectedIndexes = new Map.from(jsonDecode(_fluttermojiOptions));
     update();
     return new Map.from(jsonDecode(_fluttermojiOptions));
   }
