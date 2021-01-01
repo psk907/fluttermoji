@@ -1,5 +1,3 @@
-
-
 # Fluttermoji  <img src="https://user-images.githubusercontent.com/37346450/103101129-1b9a2100-463c-11eb-8a94-b6fbe44bf00f.png" align="right" height="150" />
 
 A light-weight and highly customizable SVG graphic set for Flutter, which provides a Customizer Widget, CircleAvatar and other utility functions.
@@ -7,19 +5,20 @@ A light-weight and highly customizable SVG graphic set for Flutter, which provid
 This package provides you two easy-to-use widgets -
 
 | Name | Description | Screenshot | 
-|-------- | ------------- | ----------------|--------------- |
+|--------|----------|---------- |
 |FluttermojiCircleAvatar | Use your fluttermoji anywhere in your Flutter app with a simple customizable widget. Supports material dark theme too.| ![1608830483994](https://user-images.githubusercontent.com/37346450/103071632-009ec100-45ea-11eb-97c4-96c9ec67e204.gif)
 |FluttermojiCustomizer | A complete personalization suit that offers previews of each individual component and a modern UI with material light and dark theme support.|![1608827561239](https://user-images.githubusercontent.com/37346450/103100686-c0ffc580-4639-11eb-9fc9-9fe5c0bf7dcc.jpg)
 
 Use the given utility functions to send and receive Fluttermoji data from your server/DB efficiently.
 
 | Function Prototype | Description | 
-|-------- | ------------- | --------------|--------------- |
+|------------------|---------------|
 |String decodeFluttermojifromString(String encodedData)| Decode your string containing the attributes to a SVG and render it by enclosing this string with a SvgPicture.string() | 
 | Future\<Map> encodeMySVGtoMap() | Retrieve the local user's fluttermoji attributes from local storage and encodes them to a Map of attributes and returns a Future, you have to await on function call. |
 |Future\<String> encodeMySVGtoString() | Retrieve the local user's fluttermoji attributes from local storage and encodes them to a String containing a map of attributes and returns a Future, you have to await on function call. | 
  
  SVG Assets used are derived from [getavataaars.com](https://getavataaars.com/) .
+
 ## Screenshots
 ###  Example app
 <img src="https://user-images.githubusercontent.com/37346450/103443014-fd0dd880-4c80-11eb-8955-309bfb66fb4c.jpg" height ="400" />
