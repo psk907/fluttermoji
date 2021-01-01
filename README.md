@@ -4,25 +4,31 @@
 
 A light-weight and highly customizable SVG graphic set for Flutter, which provides a Customizer Widget, CircleAvatar and other utility functions.
 
-
 This package provides you two easy-to-use widgets -
 
-| Name | Returns | Description | Screenshot | 
+| Name | Description | Screenshot | 
 |-------- | ------------- | ----------------|--------------- |
-|FluttermojiCircleAvatar |Widget | Use your fluttermoji anywhere in your Flutter app with a simple customizable widget.| ![1608830483994](https://user-images.githubusercontent.com/37346450/103071632-009ec100-45ea-11eb-97c4-96c9ec67e204.gif)
-|FluttermojiCustomizer |Widget| A complete personalization suit that offers previews of each individual component and a modern UI with material light and dark theme support.|![1608827561239](https://user-images.githubusercontent.com/37346450/103100686-c0ffc580-4639-11eb-9fc9-9fe5c0bf7dcc.jpg)
+|FluttermojiCircleAvatar | Use your fluttermoji anywhere in your Flutter app with a simple customizable widget. Supports material dark theme too.| ![1608830483994](https://user-images.githubusercontent.com/37346450/103071632-009ec100-45ea-11eb-97c4-96c9ec67e204.gif)
+|FluttermojiCustomizer | A complete personalization suit that offers previews of each individual component and a modern UI with material light and dark theme support.|![1608827561239](https://user-images.githubusercontent.com/37346450/103100686-c0ffc580-4639-11eb-9fc9-9fe5c0bf7dcc.jpg)
 
 Use the given utility functions to send and receive Fluttermoji data from your server/DB efficiently.
 
-| Name | Arguments | Description | Returns | 
+| Function Prototype | Description | 
 |-------- | ------------- | --------------|--------------- |
-|decodeFluttermojifromString| String encodedData| Decode your string containing the attributes to a SVG and render it by enclosing this string with a SvgPicture.string() | String |
-| encodeMySVGtoMap| none |Retrieve the local user's fluttermoji attributes from local storage and encodes them to a Map of attributes and returns a Future, you have to await on function call | Future\<Map>|
-|encodeMySVGtoString | none | Retrieve the local user's fluttermoji attributes from local storage and encodes them to a String containing a map of attributes and returns a Future, you have to await on function call | Future\<String>
-
- Built using the <i>flutter_svg</i> and <i>get</i> packages, to offer high-speed scalable SVGs .
+|String decodeFluttermojifromString(String encodedData)| Decode your string containing the attributes to a SVG and render it by enclosing this string with a SvgPicture.string() | 
+| Future\<Map> encodeMySVGtoMap() | Retrieve the local user's fluttermoji attributes from local storage and encodes them to a Map of attributes and returns a Future, you have to await on function call. |
+|Future\<String> encodeMySVGtoString() | Retrieve the local user's fluttermoji attributes from local storage and encodes them to a String containing a map of attributes and returns a Future, you have to await on function call. | 
  
  SVG Assets used are derived from [getavataaars.com](https://getavataaars.com/) .
+## Screenshots
+###  Example app
+<img src="https://user-images.githubusercontent.com/37346450/103443014-fd0dd880-4c80-11eb-8955-309bfb66fb4c.jpg" height ="400" />
+<img src="https://user-images.githubusercontent.com/37346450/103443015-fed79c00-4c80-11eb-8219-5edab76c9f0f.jpg" height="400" />
+<img src="https://user-images.githubusercontent.com/37346450/103443018-01d28c80-4c81-11eb-8336-ebc19de61220.jpg" height="400" />
+
+### Use them in your games or social media apps
+
+<img src="https://user-images.githubusercontent.com/37346450/103443017-00a15f80-4c81-11eb-8223-3404a35079aa.jpg" height="400" />
 
 ## Usage Instructions
 1. Depend on it by importing your package in the ```pubspec.yaml```  file.
@@ -55,13 +61,13 @@ The package offers a ton of features in the simplest way possible, however there
 - The Fluttermoji's attributes are saved to local app storage. Clearing app data would mean clearing these attributes as well.
 
 ## Attributions
-My mention goes to the following sources for their respective assets used in this package.
 
 - SVG assets from [Fang-Pen Lin](getAvataars.com)'s  [GitHub repository](https://github.com/fangpenlin/avataaars-generator)
 - Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 
 ## Community
 If you find any issues or have some feedback, please raise the same on the GitHub repo or contact me directly.
+Share your creative implementation of Fluttermoji with me and I might feature them on this page. Just place a comment in the Discussions forum on the repo.
 Do leave a thumbs up if you liked it.
 
 <strong>Happy Fluttering ; )</strong>

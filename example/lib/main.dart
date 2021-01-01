@@ -78,7 +78,6 @@ class NewPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             FluttermojiCircleAvatar(
-              backgroundColor: Colors.grey[200],
               radius: 100,
             ),
             FluttermojiCustomizer(

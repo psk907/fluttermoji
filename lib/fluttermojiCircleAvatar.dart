@@ -13,33 +13,35 @@ import 'fluttermojiController.dart';
 class FluttermojiCircleAvatar extends StatelessWidget {
   final double radius;
   final Color backgroundColor;
-  FluttermojiCircleAvatar(
-      {Key key, this.radius = 75.0, this.backgroundColor = Colors.blueAccent})
+  FluttermojiCircleAvatar({Key key, this.radius = 75.0, this.backgroundColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: CircleAvatar(
-          // radius: MediaQuery.of(context).size.width / 4.55,
-          radius: radius,
-          backgroundColor: backgroundColor,
-          child: GetX<FluttermojiController>(
-              init: FluttermojiController(),
-              autoRemove: false,
-              builder: (snapshot) {
-                if (snapshot.fluttermoji.value.isEmpty) {
-                  return CupertinoActivityIndicator();
-                }
-                return SvgPicture.string(
-                  snapshot.fluttermoji.value,
-                  height: radius * 1.6,
-                  semanticsLabel: "Your Fluttermoji",
-                  placeholderBuilder: (context) => Center(
-                    child: CupertinoActivityIndicator(),
-                  ),
-                );
-              })),
-    );
+    if (backgroundColor == null)
+      CircleAvatar(radius: radius, child: buildGetX());
+    return CircleAvatar(
+        radius: radius,
+        backgroundColor: backgroundColor,
+        child: buildGetX());
+  }
+
+  GetX<FluttermojiController> buildGetX() {
+    return GetX<FluttermojiController>(
+        init: FluttermojiController(),
+        autoRemove: false,
+        builder: (snapshot) {
+          if (snapshot.fluttermoji.value.isEmpty) {
+            return CupertinoActivityIndicator();
+          }
+          return SvgPicture.string(
+            snapshot.fluttermoji.value,
+            height: radius * 1.6,
+            semanticsLabel: "Your Fluttermoji",
+            placeholderBuilder: (context) => Center(
+              child: CupertinoActivityIndicator(),
+            ),
+          );
+        });
   }
 }

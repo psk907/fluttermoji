@@ -1,3 +1,8 @@
+## [0.1.1] - 01/01/2021
+
+ * Added Material Dark theme support to FluttermojiCircleAvatar
+ * Added screenshots to the README.md
+
 ## [0.1.0] - 24/12/2020
 
 * Added documentation to many APIs and to the README.md as well.
