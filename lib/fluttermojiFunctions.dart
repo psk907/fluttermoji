@@ -40,7 +40,7 @@ class FluttermojiFunctions {
   /// Decode your string containing the attributes to a SVG and render it
   /// by enclosing this string with a SvgPicture.string()
   String decodeFluttermojifromString(String encodedData) {
-    if (encodedData != null && encodedData == '')
+    if (encodedData != null && encodedData != '')
       _decodedList = new Map.from(jsonDecode(encodedData));
 
     String _fluttermojiStyle =
