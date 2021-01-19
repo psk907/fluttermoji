@@ -1,3 +1,7 @@
+## [0.1.2] - 19/01/2021
+
+ * Fixed a bug in decodeFluttermojifromString()
+
 ## [0.1.1] - 01/01/2021
 
  * Added Material Dark theme support to FluttermojiCircleAvatar
