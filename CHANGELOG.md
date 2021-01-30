@@ -1,3 +1,7 @@
+## [0.1.2+1] - 30/01/2021
+
+ * (Hotfix) Cleared some lints for a cleaner code
+
 ## [0.1.2] - 19/01/2021
 
  * Fixed a bug in decodeFluttermojifromString()
