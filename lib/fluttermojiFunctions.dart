@@ -41,7 +41,7 @@ class FluttermojiFunctions {
   /// by enclosing this string with a SvgPicture.string()
   String decodeFluttermojifromString(String encodedData) {
     if (encodedData != null && encodedData != '')
-      _decodedList = new Map.from(jsonDecode(encodedData));
+      _decodedList = Map.from(jsonDecode(encodedData));
 
     String _fluttermojiStyle =
         fluttermojiStyle[_getFluttermojiProperty('style')];
@@ -128,7 +128,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
       return _fluttermojiOptionsMap;
     }
 
-    return new Map.from(jsonDecode(_fluttermojiOptions));
+    return Map.from(jsonDecode(_fluttermojiOptions));
   }
 
   /// Retrieve the local user's fluttermoji attributes from local storage

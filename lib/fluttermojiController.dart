@@ -20,7 +20,7 @@ import 'fluttermoji_assets/top/hairStyles/hairStyle.dart';
 /// Exposes certain static functions for use by the developer
 class FluttermojiController extends GetxController {
   var fluttermoji = "".obs;
-  Map<String, dynamic> selectedIndexes = new Map<String, dynamic>();
+  Map<String, dynamic> selectedIndexes = <String, dynamic>{};
   @override
   void onInit() {
     // called immediately after the widget is allocated memory
@@ -28,7 +28,7 @@ class FluttermojiController extends GetxController {
     super.onInit();
   }
 
-  init() async {
+  void init() async {
     Map<String, int> _tempIndexes = await getFluttermojiOptions();
     selectedIndexes = _tempIndexes;
     update();
@@ -160,12 +160,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
       update();
       return _fluttermojiOptionsMap;
     }
-    selectedIndexes = new Map.from(jsonDecode(_fluttermojiOptions));
+    selectedIndexes = Map.from(jsonDecode(_fluttermojiOptions));
     update();
-    return new Map.from(jsonDecode(_fluttermojiOptions));
+    return Map.from(jsonDecode(_fluttermojiOptions));
   }
 
-  clearFluttermoji() async {
+  Future<bool> clearFluttermoji() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     return pref.remove('fluttermojiSelectedOptions');
   }

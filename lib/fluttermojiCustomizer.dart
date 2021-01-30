@@ -14,14 +14,14 @@ import 'fluttermojiController.dart';
 /// 
 /// Adapts to the enclosing MaterialApp's dark theme settings
 /// 
-/// It is advised that a [FluttermojiCircleAvatar] is also present in the same page.
+/// It is advised that a [FluttermojiCircleAvatar] also be present in the same page.
 class FluttermojiCustomizer extends StatefulWidget {
   final String outerTitleText;
   final double scaffoldHeight;
   final double scaffoldWidth;
   FluttermojiCustomizer(
       {Key key,
-      this.outerTitleText = "Customize :",
+      this.outerTitleText = 'Customize :',
       this.scaffoldHeight = 0.0,
       this.scaffoldWidth = 0.0})
       : super(key: key);
@@ -44,7 +44,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
       Get.put(FluttermojiController());
       _fluttermojiController = Get.find<FluttermojiController>();
     setState(() {
-      tabController = new TabController(length: 11, vsync: this);
+      tabController = TabController(length: 11, vsync: this);
       fluttermojiController=_fluttermojiController;
     });
   }
@@ -58,21 +58,21 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
       @required List<ExpandedFluttermojiCardItem> attributes}) {
     var size = MediaQuery.of(context).size;
 
-    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    Color iconColor = (!isDarkMode) ? Colors.grey[600] : Colors.white;
+    var isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    var iconColor = (!isDarkMode) ? Colors.grey[600] : Colors.white;
     //final double mediumfont = size.height * 0.038;
-    List<Widget> attributeRows = new List<Widget>();
-    List<Widget> navbarWidgets = new List<Widget>();
-    Color _appbarcolor = (!isDarkMode) ? Colors.white : Colors.grey[600];
-    Color _bgcolor = (!isDarkMode) ? Color(0xFFF1F1F1) : Colors.grey[800];
+    var attributeRows = <Widget>[];
+    var navbarWidgets = <Widget>[];
+    var _appbarcolor = (!isDarkMode) ? Colors.white : Colors.grey[600];
+    var _bgcolor = (!isDarkMode) ? Color(0xFFF1F1F1) : Colors.grey[800];
 
     attributes.forEach((attribute) {
       if (!fluttermojiController.selectedIndexes.containsKey(attribute.key)) {
         fluttermojiController.selectedIndexes[attribute.key] = 0;
       }
-      int attributeListLength =
+      var attributeListLength =
           fluttermojiProperties[attribute.key].property.length ?? 0;
-      int gridCrossAxisCount = 4;
+      var gridCrossAxisCount = 4;
       int i = fluttermojiController.selectedIndexes[attribute.key];
       if (attributeListLength < 12)
         gridCrossAxisCount = 3;
@@ -148,7 +148,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
                 child: SvgPicture.string(
                   fluttermojiController.getComponentSVG(attribute.key, index),
                   height: 20,
-                  semanticsLabel: "Your Fluttermoji",
+                  semanticsLabel: 'Your Fluttermoji',
                   placeholderBuilder: (context) => Center(
                     child: CupertinoActivityIndicator(),
                   ),
@@ -176,7 +176,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(18),
                 child: Scaffold(
-                  key: ValueKey("Overview"),
+                  key: ValueKey('Overview'),
                   backgroundColor: _bgcolor,
                   body: TabBarView(
                      // physics: PageScrollPhysics(),
@@ -187,11 +187,9 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
                     child: TabBar(
                         controller: tabController,
                         isScrollable: true,
-                        // labelPadding: EdgeInsets.fromLTRB(2, 5, 2, 10),
                         labelPadding: EdgeInsets.fromLTRB(0, 8, 0, 8),
                         indicatorColor: Colors.blue,
                         indicatorPadding: EdgeInsets.all(2),
-                        //unselectedLabelColor: Colors.grey[500],
                         tabs: navbarWidgets),
                   ),
                 ),
@@ -213,7 +211,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
                     : size.height * 0.025,
               ),
               onPressed: () {
-                int _currentIndex = tabController.index;
+                var _currentIndex = tabController.index;
                 tabController.animateTo(_currentIndex < tabController.length
                     ? _currentIndex + 1
                     : _currentIndex);
