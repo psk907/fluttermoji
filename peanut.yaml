@@ -1,0 +1,3 @@
+# Configuration for https://pub.dev/packages/fluttermoji
+directories:
+- example/lib

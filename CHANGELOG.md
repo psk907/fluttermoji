@@ -2,6 +2,7 @@
 
  * Updated dependencies to their null-safe version
  * Migrated package to Null safety
+ * Added support for Web
 
 ## [0.1.2+1] - 30/01/2021
 
