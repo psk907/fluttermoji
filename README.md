@@ -72,4 +72,11 @@ If you find any issues or have some feedback, please raise the same on the GitHu
 Share your creative implementation of Fluttermoji with me and I might feature them on this page. Just place a comment in the Discussions forum on the repo.
 Do leave a thumbs up if you liked it.
 
+<strong>Note:
+The prerelease version is tested to work optimally on Android and iOS and is also NULL-SAFE.
+v0.2.0 will be marked as stable once get and flutter_svg packages are updated with a stable null safe version.
+Null-safe packages are backwards compatible too! So I recommend you try it out.
+</strong>
+
+
 <strong>Happy Fluttering ; )</strong>
