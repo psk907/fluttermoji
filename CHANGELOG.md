@@ -1,3 +1,8 @@
+## [0.2.0] - 10/03/2021
+
+ * Updated dependencies to their null-safe version
+ * Migrated package to Null safety
+
 ## [0.1.2+1] - 30/01/2021
 
  * (Hotfix) Cleared some lints for a cleaner code
