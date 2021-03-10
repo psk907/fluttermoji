@@ -12,8 +12,8 @@ import 'fluttermojiController.dart';
 /// Advice the users to set up their Fluttermoji first to avoid unexpected issues.
 class FluttermojiCircleAvatar extends StatelessWidget {
   final double radius;
-  final Color backgroundColor;
-  FluttermojiCircleAvatar({Key key, this.radius = 75.0, this.backgroundColor})
+  final Color? backgroundColor;
+  FluttermojiCircleAvatar({Key? key, this.radius = 75.0, this.backgroundColor})
       : super(key: key);
 
   @override
@@ -29,11 +29,11 @@ class FluttermojiCircleAvatar extends StatelessWidget {
         init: FluttermojiController(),
         autoRemove: false,
         builder: (snapshot) {
-          if (snapshot.fluttermoji.value.isEmpty) {
+          if (snapshot.fluttermoji.value!.isEmpty) {
             return CupertinoActivityIndicator();
           }
           return SvgPicture.string(
-            snapshot.fluttermoji.value,
+            snapshot.fluttermoji.value!,
             height: radius * 1.6,
             semanticsLabel: "Your Fluttermoji",
             placeholderBuilder: (context) => Center(

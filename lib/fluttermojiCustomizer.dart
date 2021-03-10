@@ -20,7 +20,7 @@ class FluttermojiCustomizer extends StatefulWidget {
   final double scaffoldHeight;
   final double scaffoldWidth;
   FluttermojiCustomizer(
-      {Key key,
+      {Key? key,
       this.outerTitleText = 'Customize :',
       this.scaffoldHeight = 0.0,
       this.scaffoldWidth = 0.0})
@@ -32,8 +32,8 @@ class FluttermojiCustomizer extends StatefulWidget {
 
 class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
     with SingleTickerProviderStateMixin {
-  FluttermojiController fluttermojiController;
-  /*late*/TabController tabController;
+  late FluttermojiController fluttermojiController;
+  late TabController tabController;
   var heightFactor = 0.4;
   var widthFactor = 0.95;
 
@@ -54,8 +54,8 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
   ///
   /// [attribute] is an object with the fields attributeName and attributeKey
   Widget expandedCard(
-      {@required String cardTitle,
-      @required List<ExpandedFluttermojiCardItem> attributes}) {
+      {required String cardTitle,
+      required List<ExpandedFluttermojiCardItem> attributes}) {
     var size = MediaQuery.of(context).size;
 
     var isDarkMode = Theme.of(context).brightness == Brightness.dark;
@@ -71,16 +71,16 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
         fluttermojiController.selectedIndexes[attribute.key] = 0;
       }
       var attributeListLength =
-          fluttermojiProperties[attribute.key].property.length ?? 0;
+          fluttermojiProperties[attribute.key!]!.property!.length;
       var gridCrossAxisCount = 4;
-      int i = fluttermojiController.selectedIndexes[attribute.key];
+      int? i = fluttermojiController.selectedIndexes[attribute.key];
       if (attributeListLength < 12)
         gridCrossAxisCount = 3;
       else if (attributeListLength < 9) gridCrossAxisCount = 2;
       Widget bottomNavWidget = Padding(
           padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 12),
           child: SvgPicture.asset(
-            attribute.iconAsset,
+            attribute.iconAsset!,
             package: 'fluttermoji',
             height: (attribute.iconsize == 0)
                 ? widget.scaffoldHeight > 0
@@ -253,7 +253,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    Color iconColor = (!isDarkMode) ? Colors.grey[700] : Colors.white /*!*/;
+    Color? iconColor = (!isDarkMode) ? Colors.grey[700] : Colors.white;
     return Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,

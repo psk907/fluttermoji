@@ -17,9 +17,9 @@ class Clothes {
     "Red": "#FF5C5C",
     "White": "#FFFFFF",
   };
-  static String generateClothes(
+  static String? generateClothes(
       {String clotheType = "Hoodie", String clColor = "Black"}) {
-    String colorHex = clotheColor[clColor];
+    String? colorHex = clotheColor[clColor];
 
     Map<String, dynamic> clothes = {
       "Blazer + T-Shirt": '''

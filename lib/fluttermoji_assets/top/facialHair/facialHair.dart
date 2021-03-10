@@ -10,9 +10,9 @@ class FacialHair {
     'Platinum': "#ECDCBF",
     'Red': "#C93305",
   };
-  static String generateFacialHair(
+  static String? generateFacialHair(
       {String facialHairType = "Nothing", String fhColor = "Black"}) {
-    String colorHex = facialHairColor[fhColor];
+    String? colorHex = facialHairColor[fhColor];
 
     Map<String, dynamic> facialHair = {
       "Nothing": '''        

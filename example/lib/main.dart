@@ -53,7 +53,7 @@ class MyHomePage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            RaisedButton.icon(
+            ElevatedButton.icon(
               icon: Icon(Icons.edit),
               label: Text("Customize"),
               onPressed: () => Navigator.push(context,

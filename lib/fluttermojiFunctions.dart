@@ -15,7 +15,7 @@ import 'fluttermoji_assets/top/facialHair/facialHair.dart';
 import 'fluttermoji_assets/top/hairStyles/hairStyle.dart';
 
 class FluttermojiFunctions {
-  Map<String, int> _decodedList;
+  late Map<String, int> _decodedList;
   FluttermojiFunctions() {
     _decodedList = {
       'topType': 4,
@@ -34,23 +34,24 @@ class FluttermojiFunctions {
     };
   }
   String _getFluttermojiProperty(String type) {
-    return fluttermojiProperties[type].property.elementAt(_decodedList[type]);
+    return fluttermojiProperties[type]!
+        .property!
+        .elementAt(_decodedList[type]!);
   }
 
   /// Decode your string containing the attributes to a SVG and render it
   /// by enclosing this string with a SvgPicture.string()
   String decodeFluttermojifromString(String encodedData) {
-    if (encodedData != null && encodedData != '')
-      _decodedList = Map.from(jsonDecode(encodedData));
+    if (encodedData != '') _decodedList = Map.from(jsonDecode(encodedData));
 
     String _fluttermojiStyle =
-        fluttermojiStyle[_getFluttermojiProperty('style')];
+        fluttermojiStyle[_getFluttermojiProperty('style')]!;
     String _clothe = Clothes.generateClothes(
         clotheType: _getFluttermojiProperty('clotheType'),
-        clColor: _getFluttermojiProperty('clotheColor'));
+        clColor: _getFluttermojiProperty('clotheColor'))!;
     String _facialhair = FacialHair.generateFacialHair(
         facialHairType: _getFluttermojiProperty('facialHairType'),
-        fhColor: _getFluttermojiProperty('facialHairColor'));
+        fhColor: _getFluttermojiProperty('facialHairColor'))!;
     String _mouth = mouth['${_getFluttermojiProperty('mouthType')}'];
     String _nose = nose['Default'];
     String _eyes = eyes['${_getFluttermojiProperty('eyeType')}'];
@@ -58,7 +59,7 @@ class FluttermojiFunctions {
     String _accessory = accessories[_getFluttermojiProperty('accessoriesType')];
     String _hair = HairStyle.generateHairStyle(
         hairType: _getFluttermojiProperty('topType'),
-        hColor: _getFluttermojiProperty('hairColor'));
+        hColor: _getFluttermojiProperty('hairColor'))!;
     String _skin = skin[_getFluttermojiProperty('skinColor')];
     String _completeSVG = '''
 <svg width="264px" height="280px" viewBox="0 0 264 280" version="1.1"
@@ -105,7 +106,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
   /// returns a Future, you have to await on function call
   Future<Map<String, dynamic>> encodeMySVGtoMap() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    String _fluttermojiOptions = pref.getString('fluttermojiSelectedOptions');
+    String? _fluttermojiOptions = pref.getString('fluttermojiSelectedOptions');
     if (_fluttermojiOptions == null || _fluttermojiOptions == '') {
       Map<String, int> _fluttermojiOptionsMap = {
         'topType': 4,
@@ -137,7 +138,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
   /// returns a Future, you have to await on function call
   Future<String> encodeMySVGtoString() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    String _fluttermojiOptions = pref.getString('fluttermojiSelectedOptions');
+    String? _fluttermojiOptions = pref.getString('fluttermojiSelectedOptions');
     if (_fluttermojiOptions == null || _fluttermojiOptions == '') {
       Map<String, int> _fluttermojiOptionsMap = {
         'topType': 4,

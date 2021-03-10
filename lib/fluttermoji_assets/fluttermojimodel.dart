@@ -24,8 +24,8 @@ final Map<String, FluttermojiPropertyItem> fluttermojiProperties = {
 
 class ExpandedFluttermojiCardItem {
   String title;
-  String key;
-  String iconAsset;
+  String? key;
+  String? iconAsset;
   double iconsize;
   ExpandedFluttermojiCardItem(
       {this.iconsize = 0, this.title = "Unnamed", this.key, this.iconAsset});
@@ -34,7 +34,7 @@ class ExpandedFluttermojiCardItem {
 class FluttermojiPropertyItem extends ChangeNotifier {
   String title;
   int choice;
-  List<String> property;
+  List<String>? property;
   FluttermojiPropertyItem({
     this.title = "Unnamed",
     this.choice = 0,
