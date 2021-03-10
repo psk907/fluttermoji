@@ -21,6 +21,9 @@ Use the given utility functions to send and receive Fluttermoji data from your s
 
 ## Screenshots
 ###  Example app
+<a href="https://psk907.github.io/fluttermoji" >Try out the demo on your Desktop Browser now</a>
+<br />
+<br />
 <img src="https://user-images.githubusercontent.com/37346450/103443014-fd0dd880-4c80-11eb-8955-309bfb66fb4c.jpg" height ="400" />
 <img src="https://user-images.githubusercontent.com/37346450/103443015-fed79c00-4c80-11eb-8219-5edab76c9f0f.jpg" height="400" />
 <img src="https://user-images.githubusercontent.com/37346450/103443018-01d28c80-4c81-11eb-8336-ebc19de61220.jpg" height="400" />
