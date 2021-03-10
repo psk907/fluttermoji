@@ -1,25 +1,24 @@
 /// SVG strings and generators for Clothes
 class Clothes {
   static Map<String, dynamic> clotheColor = {
-      "Black": "#262E33",
-      "Blue01": "#65C9FF",
-      "Blue02": "#5199E4",
-      "Blue03": "#25557C",
-      "Gray01": "#E6E6E6",
-      "Gray02": "#929598",
-      "Heather": "#3C4F5C",
-      "PastelBlue": "#B1E2FF",
-      "PastelGreen": "#A7FFC4",
-      "PastelOrange": "#FFDEB5",
-      "PastelRed": "#FFAFB9",
-      "PastelYellow": "#FFFFB1",
-      "Pink": "#FF488E",
-      "Red": "#FF5C5C",
-      "White": "#FFFFFF",
-    }; static String generateClothes(
+    "Black": "#262E33",
+    "Blue01": "#65C9FF",
+    "Blue02": "#5199E4",
+    "Blue03": "#25557C",
+    "Gray01": "#E6E6E6",
+    "Gray02": "#929598",
+    "Heather": "#3C4F5C",
+    "PastelBlue": "#B1E2FF",
+    "PastelGreen": "#A7FFC4",
+    "PastelOrange": "#FFDEB5",
+    "PastelRed": "#FFAFB9",
+    "PastelYellow": "#FFFFB1",
+    "Pink": "#FF488E",
+    "Red": "#FF5C5C",
+    "White": "#FFFFFF",
+  };
+  static String generateClothes(
       {String clotheType = "Hoodie", String clColor = "Black"}) {
-   
-
     String colorHex = clotheColor[clColor];
 
     Map<String, dynamic> clothes = {

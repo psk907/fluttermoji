@@ -1,28 +1,24 @@
 /// SVG strings and generators for hairstyle
-class HairStyle{
-static Map<String,dynamic> hairColor={
-'Auburn':"#A55728",
-'Black':"#2C1B18",
-'Blonde':"#B58143",
-'BlondeGolden':"#D6B370",
-'Brown':"#724133",
-'BrownDark':"#4A312C",
-'PastelPink':'#F59797',
-'Platinum':"#ECDCBF",
-'Red':"#C93305",
-'SilverGray':'#E8E1E1',
-};
+class HairStyle {
+  static Map<String, dynamic> hairColor = {
+    'Auburn': "#A55728",
+    'Black': "#2C1B18",
+    'Blonde': "#B58143",
+    'BlondeGolden': "#D6B370",
+    'Brown': "#724133",
+    'BrownDark': "#4A312C",
+    'PastelPink': '#F59797',
+    'Platinum': "#ECDCBF",
+    'Red': "#C93305",
+    'SilverGray': '#E8E1E1',
+  };
 
-static String generateHairStyle({String hairType="Eyepatch",String hColor="Black"}){
+  static String generateHairStyle(
+      {String hairType = "Eyepatch", String hColor = "Black"}) {
+    String colorHex = hairColor[hColor];
 
-
-String colorHex=hairColor[hColor];
-
-
-
-
-Map<String, dynamic> hair = {
-  'Eyepatch': '''
+    Map<String, dynamic> hair = {
+      'Eyepatch': '''
 <g id="Top" strokeWidth="1" fill-rule="evenodd">
         <defs>
           <rect id="react-path-kvwd"  x="0" y="0" width="264" height="280" ></rect>
@@ -44,7 +40,7 @@ Map<String, dynamic> hair = {
         </g>
       </g>
 ''',
-  "Hat": '''
+      "Hat": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-5564" x="0" y="0" width="264" height="280"></rect>
@@ -77,7 +73,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Hijab": '''
+      "Hijab": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-5680" x="0" y="0" width="264" height="280"></rect>
@@ -110,7 +106,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Long (Female)": '''
+      "Long (Female)": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-5731" x="0" y="0" width="264" height="280"></rect>
@@ -146,7 +142,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Bob cut": '''
+      "Bob cut": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-5910" x="0" y="0" width="264" height="280"></rect>
@@ -173,7 +169,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Bun": '''
+      "Bun": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-7666" x="0" y="0" width="264" height="280"></rect>
@@ -198,7 +194,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Curly (Female)": '''
+      "Curly (Female)": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-6566" x="0" y="0" width="264" height="280"></rect>
@@ -226,7 +222,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Curvy": '''
+      "Curvy": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-6862" x="0" y="0" width="264" height="280"></rect>
@@ -256,7 +252,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Long w/ dreads": '''
+      "Long w/ dreads": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-8810" x="0" y="0" width="264" height="280"></rect>
@@ -287,7 +283,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Frida": '''
+      "Frida": '''
     <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-8794" x="0" y="0" width="264" height="280"></rect>
@@ -396,7 +392,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Fro": '''
+      "Fro": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-10404" x="0" y="0" width="264" height="280"></rect>
@@ -425,7 +421,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Fro w/ band": '''
+      "Fro w/ band": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-84876" x="0" y="0" width="264" height="280"></rect>
@@ -452,7 +448,7 @@ Map<String, dynamic> hair = {
 					</g>
  
 ''',
-  "Mia Wallace": '''
+      "Mia Wallace": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-84833" x="0" y="0" width="264" height="280"></rect>
@@ -480,7 +476,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Its not short": '''
+      "Its not short": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-85463" x="0" y="0" width="264" height="280"></rect>
@@ -510,7 +506,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Long w/ shaved sides": '''
+      "Long w/ shaved sides": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-85683" x="0" y="0" width="264" height="280"></rect>
@@ -543,7 +539,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "LongHairStraight": '''
+      "LongHairStraight": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-85497" x="0" y="0" width="264" height="280"></rect>
@@ -572,7 +568,7 @@ Map<String, dynamic> hair = {
 					</g>
 
 ''',
-  "LongHairStraight2": '''
+      "LongHairStraight2": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-85531" x="0" y="0" width="264" height="280"></rect>
@@ -602,7 +598,7 @@ Map<String, dynamic> hair = {
 					</g>
 
 ''',
-  "LongHairStraightStrand": '''
+      "LongHairStraightStrand": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-85653" x="0" y="0" width="264" height="280"></rect>
@@ -631,7 +627,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Bald": '''
+      "Bald": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-86260" x="0" y="0" width="264" height="280"></rect>
@@ -653,7 +649,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Short w/ dreads": '''
+      "Short w/ dreads": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-90661" x="0" y="0" width="264" height="280"></rect>
@@ -681,7 +677,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Short w/ lots of dreads": '''
+      "Short w/ lots of dreads": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-1827" x="0" y="0" width="264" height="280"></rect>
@@ -709,7 +705,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Short w/ frizzle": '''
+      "Short w/ frizzle": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-2148" x="0" y="0" width="264" height="280"></rect>
@@ -742,7 +738,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Shaggy": '''
+      "Shaggy": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-2513" x="0" y="0" width="264" height="280"></rect>
@@ -769,7 +765,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Short n curly": '''
+      "Short n curly": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-2756" x="0" y="0" width="264" height="280"></rect>
@@ -802,7 +798,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Flat": '''
+      "Flat": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-92009" x="0" y="0" width="264" height="280"></rect>
@@ -835,7 +831,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "from School": '''
+      "from School": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-3193" x="0" y="0" width="264" height="280"></rect>
@@ -868,7 +864,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Short n waved": '''
+      "Short n waved": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-92420" x="0" y="0" width="264" height="280"></rect>
@@ -901,7 +897,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "I\'m not bald": '''
+      "I\'m not bald": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-3286" x="0" y="0" width="264" height="280"></rect>
@@ -929,7 +925,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "The caesar": '''
+      "The caesar": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-92544" x="0" y="0" width="264" height="280"></rect>
@@ -964,7 +960,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Another caeser": '''
+      "Another caeser": '''
 	<g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-93178" x="0" y="0" width="264" height="280"></rect>
@@ -999,7 +995,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Turban": '''
+      "Turban": '''
 <g id="Top" stroke-width="1" fill-rule="evenodd">
 						<defs>
 							<rect id="react-path-93449" x="0" y="0" width="264" height="280"></rect>
@@ -1043,7 +1039,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "WinterHat1": '''
+      "WinterHat1": '''
 <g id="Top">
 						<defs>
 							<rect id="react-path-94408" x="0" y="0" width="264" height="280"></rect>
@@ -1076,7 +1072,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "WinterHat2": '''
+      "WinterHat2": '''
 <g id="Top">
 						<defs>
 							<rect id="react-path-5266" x="0" y="0" width="264" height="280"></rect>
@@ -1121,7 +1117,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Santa Hat": '''
+      "Santa Hat": '''
 <g id="Top">
 						<defs>
 							<rect id="react-path-95074" x="0" y="0" width="264" height="280"></rect>
@@ -1154,7 +1150,7 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-  "Santa Hat w/ ears": '''
+      "Santa Hat w/ ears": '''
 <g id="Top">
 						<defs>
 							<rect id="react-path-95349" x="0" y="0" width="264" height="280"></rect>
@@ -1196,9 +1192,8 @@ Map<String, dynamic> hair = {
 						</g>
 					</g>
 ''',
-};
+    };
 
-return hair[hairType];
-
-}
+    return hair[hairType];
+  }
 }

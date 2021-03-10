@@ -6,14 +6,14 @@ import 'package:get/get.dart';
 import 'fluttermojiController.dart';
 
 /// This widget provides a UI for customizing the Fluttermoji
-/// 
+///
 /// Accepts a [outerTextTitle] which defaults to "Customize:"
-/// 
+///
 /// Accepts an optional [scaffoldHeight] and [scaffoldWidth].
 /// When using in landscape mode, it is advised to pass a [scaffoldWidth] to the widget
-/// 
+///
 /// Adapts to the enclosing MaterialApp's dark theme settings
-/// 
+///
 /// It is advised that a [FluttermojiCircleAvatar] also be present in the same page.
 class FluttermojiCustomizer extends StatefulWidget {
   final String outerTitleText;
@@ -33,19 +33,19 @@ class FluttermojiCustomizer extends StatefulWidget {
 class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
     with SingleTickerProviderStateMixin {
   FluttermojiController fluttermojiController;
-  TabController tabController;
+  /*late*/TabController tabController;
   var heightFactor = 0.4;
   var widthFactor = 0.95;
 
   @override
   void initState() {
     super.initState();
-      var _fluttermojiController ; 
-      Get.put(FluttermojiController());
-      _fluttermojiController = Get.find<FluttermojiController>();
+    var _fluttermojiController;
+    Get.put(FluttermojiController());
+    _fluttermojiController = Get.find<FluttermojiController>();
     setState(() {
       tabController = TabController(length: 11, vsync: this);
-      fluttermojiController=_fluttermojiController;
+      fluttermojiController = _fluttermojiController;
     });
   }
 
@@ -96,13 +96,15 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
           child: Container(
             width: double.infinity,
             color: _appbarcolor,
-          
             child: Center(
               child: Text(
                 attribute.title,
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: widget.scaffoldHeight > 0
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: widget.scaffoldHeight > 0
                       ? widget.scaffoldHeight / heightFactor * 0.024
-                      : size.height * 0.024,),
+                      : size.height * 0.024,
+                ),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -179,7 +181,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
                   key: ValueKey('Overview'),
                   backgroundColor: _bgcolor,
                   body: TabBarView(
-                     // physics: PageScrollPhysics(),
+                      // physics: PageScrollPhysics(),
                       controller: tabController,
                       children: attributeRows),
                   bottomNavigationBar: Container(
@@ -251,7 +253,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    Color iconColor = (!isDarkMode) ? Colors.grey[700] : Colors.white;
+    Color iconColor = (!isDarkMode) ? Colors.grey[700] : Colors.white /*!*/;
     return Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -287,9 +289,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
             height: widget.scaffoldHeight > 0
                 ? widget.scaffoldHeight
                 : size.height * heightFactor,
-                width: widget.scaffoldWidth > 0
-                ? widget.scaffoldWidth
-                : size.width,
+            width: widget.scaffoldWidth > 0 ? widget.scaffoldWidth : size.width,
             child: expandedCard(cardTitle: "Customize", attributes: [
               /*  ExpandedFluttermojiCardItem(
                         iconAsset: "attributeicons/hair.svg",

@@ -1,18 +1,17 @@
 /// SVG strings and generators for facial hair
 class FacialHair {
   static Map<String, dynamic> facialHairColor = {
-      'Auburn': "#A55728",
-      'Black': "#2C1B18",
-      'Blonde': "#B58143",
-      'BlondeGolden': "#D6B370",
-      'Brown': "#724133",
-      'BrownDark': "#4A312C",
-      'Platinum': "#ECDCBF",
-      'Red': "#C93305",
-    };
- static String generateFacialHair(
+    'Auburn': "#A55728",
+    'Black': "#2C1B18",
+    'Blonde': "#B58143",
+    'BlondeGolden': "#D6B370",
+    'Brown': "#724133",
+    'BrownDark': "#4A312C",
+    'Platinum': "#ECDCBF",
+    'Red': "#C93305",
+  };
+  static String generateFacialHair(
       {String facialHairType = "Nothing", String fhColor = "Black"}) {
-   
     String colorHex = facialHairColor[fhColor];
 
     Map<String, dynamic> facialHair = {

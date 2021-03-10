@@ -101,7 +101,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
 
   /// Retrieve the local user's fluttermoji attributes from local storage
   /// and encode them to a Map of attributes
-  /// 
+  ///
   /// returns a Future, you have to await on function call
   Future<Map<String, dynamic>> encodeMySVGtoMap() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
@@ -133,7 +133,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
 
   /// Retrieve the local user's fluttermoji attributes from local storage
   /// and encode them to a String containing a Map of attributes
-  /// 
+  ///
   /// returns a Future, you have to await on function call
   Future<String> encodeMySVGtoString() async {
     SharedPreferences pref = await SharedPreferences.getInstance();

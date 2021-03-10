@@ -14,9 +14,9 @@ import 'fluttermoji_assets/top/facialHair/facialHair.dart';
 import 'fluttermoji_assets/top/hairStyles/hairStyle.dart';
 
 /// Brains of the Fluttermoji package
-/// 
+///
 /// Built using the getX architecture to allow the two widgets to communicate with each other
-/// 
+///
 /// Exposes certain static functions for use by the developer
 class FluttermojiController extends GetxController {
   var fluttermoji = "".obs;
@@ -47,7 +47,6 @@ class FluttermojiController extends GetxController {
     update();
   }
 
-  
   String _getFluttermojiProperty(String type) {
     return fluttermojiProperties[type]
         .property
@@ -73,8 +72,6 @@ class FluttermojiController extends GetxController {
         'fluttermojiSelectedOptions', jsonEncode(selectedIndexes));
     update();
   }
-
- 
 
   /// converts String that contains [Map<String,int>] to [String] fluttermoji
   String getFluttermojiFromOptions() {

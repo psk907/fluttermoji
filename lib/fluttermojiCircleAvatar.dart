@@ -21,9 +21,7 @@ class FluttermojiCircleAvatar extends StatelessWidget {
     if (backgroundColor == null)
       CircleAvatar(radius: radius, child: buildGetX());
     return CircleAvatar(
-        radius: radius,
-        backgroundColor: backgroundColor,
-        child: buildGetX());
+        radius: radius, backgroundColor: backgroundColor, child: buildGetX());
   }
 
   GetX<FluttermojiController> buildGetX() {
