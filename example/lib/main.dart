@@ -28,9 +28,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
+    var platform = Theme.of(context).platform;
+    var isWeb = platform != TargetPlatform.android ||
+        platform != TargetPlatform.iOS ||
+        platform != TargetPlatform.fuchsia;
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -88,7 +91,30 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Spacer(flex: 2),
             ],
-          )
+          ),
+          SizedBox(
+            height: 100,
+          ),
+          (isWeb)
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(Icons.warning_rounded,size: 50,),
+                    SizedBox(width: 25,),
+                    Container(
+                      child: Column(
+                        children: [
+                          Text("Web preview is unstable at the moment\n",
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          Text(
+                              "This demo may not work on your mobile browser,\nUse your Desktop browser or install the app."),
+                        ],
+                      ),
+                    )
+                  ],
+                )
+              : SizedBox(height: 0),
         ],
       ),
     );
