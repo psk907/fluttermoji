@@ -30,9 +30,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var platform = Theme.of(context).platform;
-    var isWeb = platform != TargetPlatform.android ||
-        platform != TargetPlatform.iOS ||
+    TargetPlatform platform = Theme.of(context).platform;
+    var isWeb = platform != TargetPlatform.android &&
+        platform != TargetPlatform.iOS &&
+        platform != TargetPlatform.macOS &&
+        platform != TargetPlatform.windows &&
         platform != TargetPlatform.fuchsia;
     return Scaffold(
       appBar: AppBar(
@@ -100,8 +102,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(Icons.warning_rounded,size: 50,),
-                    SizedBox(width: 25,),
+                    Icon(
+                      Icons.warning_rounded,
+                      size: 50,
+                    ),
+                    SizedBox(
+                      width: 25,
+                    ),
                     Container(
                       child: Column(
                         children: [

@@ -28,7 +28,7 @@ Use the given utility functions to send and receive Fluttermoji data from your s
 <img src="https://user-images.githubusercontent.com/37346450/103443015-fed79c00-4c80-11eb-8219-5edab76c9f0f.jpg" height="400" />
 <img src="https://user-images.githubusercontent.com/37346450/103443018-01d28c80-4c81-11eb-8336-ebc19de61220.jpg" height="400" />
 
-### Use them in your games or social media apps
+<strong> Use them in your games or social media apps </strong>
 
 <img src="https://user-images.githubusercontent.com/37346450/103443017-00a15f80-4c81-11eb-8223-3404a35079aa.jpg" height="400" />
 
@@ -71,12 +71,6 @@ The package offers a ton of features in the simplest way possible, however there
 If you find any issues or have some feedback, please raise the same on the GitHub repo or contact me directly.
 Share your creative implementation of Fluttermoji with me and I might feature them on this page. Just place a comment in the Discussions forum on the repo.
 Do leave a thumbs up if you liked it.
-
-<strong>Note:
-The prerelease version is tested to work optimally on Android and iOS and is also NULL-SAFE.
-v0.2.0 will be marked as stable once get and flutter_svg packages are updated with a stable null safe version.
-Null-safe packages are backwards compatible too! So I recommend you try it out.
-</strong>
 
 
 <strong>Happy Fluttering ; )</strong>

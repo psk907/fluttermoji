@@ -1,3 +1,9 @@
+## [0.2.0] - 08/04/2021
+
+ * Updates dependencies to their null-safe stable version
+ * Migrates package to Null safety
+ * Removes dead code
+
 ## [0.2.0-nullsafety.0] - 10/03/2021
 
  * Updated dependencies to their null-safe version

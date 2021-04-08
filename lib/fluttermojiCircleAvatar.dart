@@ -29,11 +29,11 @@ class FluttermojiCircleAvatar extends StatelessWidget {
         init: FluttermojiController(),
         autoRemove: false,
         builder: (snapshot) {
-          if (snapshot.fluttermoji.value!.isEmpty) {
+          if (snapshot.fluttermoji.value.isEmpty) {
             return CupertinoActivityIndicator();
           }
           return SvgPicture.string(
-            snapshot.fluttermoji.value!,
+            snapshot.fluttermoji.value,
             height: radius * 1.6,
             semanticsLabel: "Your Fluttermoji",
             placeholderBuilder: (context) => Center(
