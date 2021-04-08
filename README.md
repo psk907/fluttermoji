@@ -1,4 +1,5 @@
-# Fluttermoji  <img src="https://user-images.githubusercontent.com/37346450/103101129-1b9a2100-463c-11eb-8a94-b6fbe44bf00f.png" align="right" height="150" />
+# fluttermoji  <img src="https://user-images.githubusercontent.com/37346450/103101129-1b9a2100-463c-11eb-8a94-b6fbe44bf00f.png" align="right" height="150" />
+![Pub Version](https://img.shields.io/pub/v/fluttermoji) [![Generic badge](https://img.shields.io/badge/demo-LIVE-green.svg)](https://psk907.github.io/fluttermoji/) [![GitHub stars](https://img.shields.io/github/stars/psk907/fluttermoji?style=social)](https://github.com/psk907/fluttermoji/stargazers) [![GitHub stars](https://img.shields.io/badge/DM-me-blue?style=flat&logo=telegram)](https://t.me/psk907)
 
 A light-weight and highly customizable SVG graphic set for Flutter, which provides a Customizer Widget, CircleAvatar and other utility functions.
 
@@ -69,7 +70,7 @@ The package offers a ton of features in the simplest way possible, however there
 
 ## Community
 If you find any issues or have some feedback, please raise the same on the GitHub repo or contact me directly.
-Share your creative implementation of Fluttermoji with me and I might feature them on this page. Just place a comment in the Discussions forum on the repo.
+Share your creative implementation of Fluttermoji with me and I might feature them on this page.
 Do leave a thumbs up if you liked it.
 
 
