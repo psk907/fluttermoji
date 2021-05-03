@@ -17,8 +17,9 @@ Use the given utility functions to send and receive Fluttermoji data from your s
 |String decodeFluttermojifromString(String encodedData)| Decode your string containing the attributes to a SVG and render it by enclosing this string with a SvgPicture.string() | 
 | Future\<Map> encodeMySVGtoMap() | Retrieve the local user's fluttermoji attributes from local storage and encodes them to a Map of attributes and returns a Future, you have to await on function call. |
 |Future\<String> encodeMySVGtoString() | Retrieve the local user's fluttermoji attributes from local storage and encodes them to a String containing a map of attributes and returns a Future, you have to await on function call. | 
- 
- SVG Assets used are derived from [getavataaars.com](https://getavataaars.com/) .
+| Future<List<bool>> clearFluttermoji() | Erase fluttermoji String and Map from local storage |
+	
+SVG Assets used are derived from [getavataaars.com](https://getavataaars.com/) .
 
 ## Screenshots
 ###  Example app
@@ -29,7 +30,7 @@ Use the given utility functions to send and receive Fluttermoji data from your s
 <img src="https://user-images.githubusercontent.com/37346450/103443015-fed79c00-4c80-11eb-8219-5edab76c9f0f.jpg" height="400" />
 <img src="https://user-images.githubusercontent.com/37346450/103443018-01d28c80-4c81-11eb-8336-ebc19de61220.jpg" height="400" />
 
-<strong> Use them in your games or social media apps </strong>
+**Use them in your games or social media apps**
 
 <img src="https://user-images.githubusercontent.com/37346450/103443017-00a15f80-4c81-11eb-8223-3404a35079aa.jpg" height="400" />
 
@@ -74,4 +75,4 @@ Share your creative implementation of Fluttermoji with me and I might feature th
 Do leave a thumbs up if you liked it.
 
 
-<strong>Happy Fluttering ; )</strong>
+**Happy Fluttering ; )**
