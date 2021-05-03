@@ -36,20 +36,20 @@ SVG Assets used are derived from [getavataaars.com](https://getavataaars.com/) .
 
 ## Usage Instructions
 1. Depend on it by importing your package in the ```pubspec.yaml```  file.
-	``` 
+	```yaml
 	dependencies:
 		fluttermoji: any
 	```
 2. Add the following import to your .dart file
-	```
+	```dart
 	import 'package:fluttermoji/fluttermoji.dart';
 	```
 3. Add the FluttermojiCircleAvatar widget to display your Fluttermoji where needed.
-	```
+	```dart
 	FluttermojiCircleAvatar();
 	```
 4. To allow your users to personalize their Fluttermoji, add the following widget and pair it with the above one in your page.
-	```
+	```dart
 	FluttermojiCustomizer();
 	```
 
