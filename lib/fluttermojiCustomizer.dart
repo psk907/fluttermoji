@@ -49,6 +49,13 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
     });
   }
 
+  @override
+  void dispose() {
+    // This ensures that unsaved edits are reverted
+    fluttermojiController.restoreState();
+    super.dispose();
+  }
+
   /// Widget that renders an expanded layout for customization
   /// Accepts a [cardTitle] and a [attributes].
   ///
@@ -90,6 +97,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
             color: iconColor,
             semanticsLabel: attribute.title,
           ));
+
       Widget _row = Column(children: [
         Expanded(
           flex: 2,
@@ -114,7 +122,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
           flex: 11,
           // height: size.height*0.25,
           child: GridView.builder(
-            physics: BouncingScrollPhysics(),
+            physics: ClampingScrollPhysics(),
             itemCount: attributeListLength,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: gridCrossAxisCount,
@@ -178,10 +186,10 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(18),
                 child: Scaffold(
-                  key: ValueKey('Overview'),
+                  key: ValueKey('FMojiCustomizer'),
                   backgroundColor: _bgcolor,
                   body: TabBarView(
-                      // physics: PageScrollPhysics(),
+                      physics: ClampingScrollPhysics(),
                       controller: tabController,
                       children: attributeRows),
                   bottomNavigationBar: Container(

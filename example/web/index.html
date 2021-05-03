@@ -55,6 +55,15 @@
       });
     }
   </script>
+  <script type="text/javascript">
+    // Force use of CanvasKit renderer to allow flutter_svg to work on mobile browsers
+    let useHtml = false;
+    if(useHtml) {
+      window.flutterWebRenderer = "html";
+    } else {
+      window.flutterWebRenderer = "canvaskit";
+    }
+  </script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>

@@ -1,3 +1,9 @@
+## [0.2.1] - 03/05/2021
+
+ * Fixes bug where preview and avatars don't revert to saved version after unsaved edits
+ * Adds clearFluttermoji() to FluttermojiFunctions
+ * Some optimizations
+
 ## [0.2.0] - 08/04/2021
 
  * Updates dependencies to their null-safe stable version

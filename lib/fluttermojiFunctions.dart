@@ -33,10 +33,20 @@ class FluttermojiFunctions {
       'graphicType': 0
     };
   }
+
   String _getFluttermojiProperty(String type) {
     return fluttermojiProperties[type]!
         .property!
         .elementAt(_decodedList[type]!);
+  }
+
+  /// Erase fluttermoji String and Map from local storage
+  Future<List<bool>> clearFluttermoji() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    return Future.wait([
+      pref.remove('fluttermojiSelectedOptions'),
+      pref.remove('fluttermoji'),
+    ]);
   }
 
   /// Decode your string containing the attributes to a SVG and render it
@@ -108,21 +118,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     SharedPreferences pref = await SharedPreferences.getInstance();
     String? _fluttermojiOptions = pref.getString('fluttermojiSelectedOptions');
     if (_fluttermojiOptions == null || _fluttermojiOptions == '') {
-      Map<String, int> _fluttermojiOptionsMap = {
-        'topType': 4,
-        'accessoriesType': 0,
-        'hairColor': 1,
-        'facialHairType': 0,
-        'facialHairColor': 1,
-        'clotheType': 4,
-        'eyeType': 0,
-        'eyebrowType': 0,
-        'mouthType': 1,
-        'skinColor': 0,
-        'clotheColor': 1,
-        'style': 0,
-        'graphicType': 0
-      };
+      Map<String, int> _fluttermojiOptionsMap =
+          Map.from(defaultFluttermojiOptions);
       await pref.setString(
           'fluttermojiSelectedOptions', jsonEncode(_fluttermojiOptionsMap));
 
@@ -140,21 +137,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     SharedPreferences pref = await SharedPreferences.getInstance();
     String? _fluttermojiOptions = pref.getString('fluttermojiSelectedOptions');
     if (_fluttermojiOptions == null || _fluttermojiOptions == '') {
-      Map<String, int> _fluttermojiOptionsMap = {
-        'topType': 4,
-        'accessoriesType': 0,
-        'hairColor': 1,
-        'facialHairType': 0,
-        'facialHairColor': 1,
-        'clotheType': 4,
-        'eyeType': 0,
-        'eyebrowType': 0,
-        'mouthType': 1,
-        'skinColor': 0,
-        'clotheColor': 1,
-        'style': 0,
-        'graphicType': 0
-      };
+      Map<String, int> _fluttermojiOptionsMap =
+          Map.from(defaultFluttermojiOptions);
       await pref.setString(
           'fluttermojiSelectedOptions', jsonEncode(_fluttermojiOptionsMap));
       return jsonEncode(_fluttermojiOptionsMap);

@@ -2,6 +2,7 @@ import 'dart:convert';
 import './fluttermoji_assets/style.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'fluttermojiFunctions.dart';
 import 'fluttermoji_assets/fluttermojimodel.dart';
 import 'fluttermoji_assets/clothes/clothes.dart';
 import 'fluttermoji_assets/face/eyebrow/eyebrow.dart';
@@ -36,7 +37,7 @@ class FluttermojiController extends GetxController {
     update();
   }
 
-  ///Adds fluttermoji new string to fluttermoji in GetX Controller
+  /// Adds fluttermoji new string to fluttermoji in GetX Controller
   void updatePreview({
     String fluttermojiNew = '',
   }) {
@@ -47,20 +48,33 @@ class FluttermojiController extends GetxController {
     update();
   }
 
+  /// Restore controller state
+  /// with the latest SAVED version of [fluttermoji] and [selectedIndexes]
+  void restoreState() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+
+    // Replace observable [fluttermoji] with latest saved version or use default attributes if null
+    fluttermoji.value = pref.getString('fluttermoji') ??
+        FluttermojiFunctions().decodeFluttermojifromString(
+          jsonEncode(defaultFluttermojiOptions),
+        );
+
+    selectedIndexes = await getFluttermojiOptions();
+    update();
+  }
+
   String _getFluttermojiProperty(String type) {
     return fluttermojiProperties[type]!
         .property!
         .elementAt(selectedIndexes[type] as int);
   }
 
-  ///
   ///  Accepts a String [fluttermoji]
   ///
   ///  stores [fluttermoji] in device storage
   ///  adds the new name to controller
   ///
   ///  Thereby updating all the states which are listening to controller
-
   void setFluttermoji({String fluttermojiNew = ''}) async {
     if (fluttermojiNew.isEmpty) {
       fluttermojiNew = getFluttermojiFromOptions();
@@ -73,7 +87,7 @@ class FluttermojiController extends GetxController {
     update();
   }
 
-  /// converts String that contains [Map<String,int>] to [String] fluttermoji
+  /// Generates a [String] fluttermoji from [selectedIndexes] pref
   String getFluttermojiFromOptions() {
     String _fluttermojiStyle =
         fluttermojiStyle[_getFluttermojiProperty('style')]!;
@@ -135,21 +149,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     SharedPreferences pref = await SharedPreferences.getInstance();
     String? _fluttermojiOptions = pref.getString('fluttermojiSelectedOptions');
     if (_fluttermojiOptions == null || _fluttermojiOptions == '') {
-      Map<String?, int> _fluttermojiOptionsMap = {
-        'topType': 4,
-        'accessoriesType': 0,
-        'hairColor': 1,
-        'facialHairType': 0,
-        'facialHairColor': 1,
-        'clotheType': 4,
-        'eyeType': 0,
-        'eyebrowType': 0,
-        'mouthType': 1,
-        'skinColor': 0,
-        'clotheColor': 1,
-        'style': 0,
-        'graphicType': 0
-      };
+      Map<String?, int> _fluttermojiOptionsMap =
+          Map.from(defaultFluttermojiOptions);
       await pref.setString(
           'fluttermojiSelectedOptions', jsonEncode(_fluttermojiOptionsMap));
       selectedIndexes = _fluttermojiOptionsMap;
@@ -162,17 +163,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     return Map.from(jsonDecode(_fluttermojiOptions));
   }
 
-  Future<bool> clearFluttermoji() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    return pref.remove('fluttermojiSelectedOptions');
-  }
-
   String? getComponentTitle(String attributeKey, int attriibuteValueIndex) {
     return fluttermojiProperties[attributeKey]!
         .property
         ?.elementAt(attriibuteValueIndex);
   }
 
+  /// Generates compnonent SVG string for an individual component
+  /// to display as a preview
   String getComponentSVG(String? attributeKey, int? attributeValueIndex) {
     switch (attributeKey) {
       case 'clotheType':
