@@ -23,7 +23,7 @@ SVG Assets used are derived from [getavataaars.com](https://getavataaars.com/) .
 
 ## Screenshots
 ###  Example app
-<a href="https://psk907.github.io/fluttermoji" >Try out the demo on your Desktop Browser now</a>
+<a href="https://psk907.github.io/fluttermoji" >Try out the demo on your browser now</a>
 <br />
 <br />
 <img src="https://user-images.githubusercontent.com/37346450/103443014-fd0dd880-4c80-11eb-8955-309bfb66fb4c.jpg" height ="400" />
@@ -32,13 +32,13 @@ SVG Assets used are derived from [getavataaars.com](https://getavataaars.com/) .
 
 **Use them in your games or social media apps**
 
-<img src="https://user-images.githubusercontent.com/37346450/103443017-00a15f80-4c81-11eb-8223-3404a35079aa.jpg" height="400" />
+<a href="https://play.google.com/store/apps/details?id=com.statefullyfidgeting.tugofwar" ><img src="https://user-images.githubusercontent.com/37346450/103443017-00a15f80-4c81-11eb-8223-3404a35079aa.jpg" height="400" /></a>
 
 ## Usage Instructions
 1. Depend on it by importing your package in the ```pubspec.yaml```  file.
 	```yaml
 	dependencies:
-		fluttermoji: any
+          fluttermoji: latest_version
 	```
 2. Add the following import to your .dart file
 	```dart
@@ -68,6 +68,7 @@ The package offers a ton of features in the simplest way possible, however there
 
 - SVG assets from [Fang-Pen Lin](getAvataars.com)'s  [GitHub repository](https://github.com/fangpenlin/avataaars-generator)
 - Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+- Animated [GIF](https://user-images.githubusercontent.com/37346450/103071632-009ec100-45ea-11eb-97c4-96c9ec67e204.gif) designed by [Reesha Shenoy](https://github.com/reeshaa) 
 
 ## Community
 If you find any issues or have some feedback, please raise the same on the GitHub repo or contact me directly.
