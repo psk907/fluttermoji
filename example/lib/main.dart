@@ -152,7 +152,7 @@ class NewPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 30),
             child: FluttermojiCustomizer(
               //scaffoldHeight: 400,
-              isSaveShow: false,
+              showSaveWidget: true,
               scaffoldWidth: isWeb ? 600 : null,
             ),
           ),

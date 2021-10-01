@@ -19,12 +19,12 @@ class FluttermojiCustomizer extends StatefulWidget {
   final String outerTitleText;
   final double scaffoldHeight;
   final double scaffoldWidth;
-  final bool isSaveShow;
+  final bool showSaveWidget;
   FluttermojiCustomizer(
       {Key? key,
       this.outerTitleText = 'Customize :',
       this.scaffoldHeight = 0.0,
-      this.isSaveShow = true,
+      this.showSaveWidget = true,
       this.scaffoldWidth = 0.0})
       : super(key: key);
 
@@ -282,7 +282,7 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
                           : size.height * 0.03,
                       fontWeight: FontWeight.w700),
                 ),
-                widget.isSaveShow
+                widget.showSaveWidget
                     ? IconButton(
                         onPressed: () {
                           fluttermojiController.setFluttermoji();
