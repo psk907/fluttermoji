@@ -1,3 +1,7 @@
+## [0.2.2] - 11/10/2021
+
+ * Adds toggle to show/hide save button widget in FluttermojiCustomizer widget.
+  
 ## [0.2.1] - 03/05/2021
 
  * Fixes bug where preview and avatars don't revert to saved version after unsaved edits
