@@ -12,10 +12,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^0.22.0
-  get: ^4.3.8
   shared_preferences: ^2.0.8
-
+  flutter_svg: ^0.23.0+1
+  get: ^4.3.8
 dev_dependencies:
   flutter_test:
     sdk: flutter

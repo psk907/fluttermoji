@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
+  MyHomePage({Key? key, this.title}) : super(key: key);
+  final String? title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
         platform != TargetPlatform.fuchsia;
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title!),
         centerTitle: true,
       ),
       body: ListView(
@@ -129,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class NewPage extends StatelessWidget {
-  const NewPage({Key key}) : super(key: key);
+  const NewPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -153,7 +153,7 @@ class NewPage extends StatelessWidget {
             child: FluttermojiCustomizer(
               //scaffoldHeight: 400,
               showSaveWidget: true,
-              scaffoldWidth: isWeb ? 600 : null,
+               scaffoldWidth: isWeb ? 600 : 0,
             ),
           ),
         ],
