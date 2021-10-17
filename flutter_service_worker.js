@@ -6,8 +6,8 @@ const RESOURCES = {
   "assets/AssetManifest.json": "9f4ef299d880b6253893111ab02d5322",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"assets/NOTICES": "73ac6e468d456e95c2b015bc38e1bf4c",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "b14fcf3ee94e3ace300b192e9e7c8c5d",
+"assets/NOTICES": "b10fbbe0050f8767114610fcb5d4d8d5",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/packages/fluttermoji/attributeicons/accessories.svg": "0b8839e003a89232edec0e09cb12fa2b",
 "assets/packages/fluttermoji/attributeicons/beard.svg": "908ac523ce1c704be65e254aa4a04e31",
 "assets/packages/fluttermoji/attributeicons/beardcolor.svg": "8fa1ec767cfa14371ca15a47126049ba",
@@ -47,9 +47,9 @@ const RESOURCES = {
 "icons/ms-icon-150x150.png": "9e0fdf5f60936b1c3e95135e039a4c94",
 "icons/ms-icon-310x310.png": "423ee2e3583c91d7b9d98d394184cf66",
 "icons/ms-icon-70x70.png": "e45bafd0b3047150797c7aed0fc372df",
-"index.html": "f60ebfec74ae682c3b62b44c641f2006",
-"/": "f60ebfec74ae682c3b62b44c641f2006",
-"main.dart.js": "3b1025c8753a25b3a6231ef454c9cf3e",
+"index.html": "11813ae859cc439300b5407857fb9157",
+"/": "11813ae859cc439300b5407857fb9157",
+"main.dart.js": "78101a2be2c0262c30de799df5c5805a",
 "manifest.json": "9e7b34fd7c291ca2523123ef20497930",
 "version.json": "cf3c49b8ed77d44b7de3aebab31ad026"
 };
