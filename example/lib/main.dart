@@ -153,7 +153,7 @@ class NewPage extends StatelessWidget {
             child: FluttermojiCustomizer(
               //scaffoldHeight: 400,
               showSaveWidget: true,
-              scaffoldWidth: isWeb ? 600 : 0,
+               scaffoldWidth: isWeb ? 600 : 0,
             ),
           ),
         ],
