@@ -1,3 +1,15 @@
 # Configuration for https://pub.dev/packages/fluttermoji
 directories:
-- example/lib
+  - example/lib
+
+web-renderer: canvaskit
+# Instructions
+
+# To create (or update) your local gh-pages branch to match what's on the server.
+# $ git update-ref refs/heads/gh-pages origin/gh-pages
+
+# To build the web release
+# $ flutter pub global run peanut
+
+# To push your gh-pages branch to github (without switching from your working branch):
+# $ git push origin --set-upstream gh-pages
