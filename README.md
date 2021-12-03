@@ -60,9 +60,10 @@ The package offers a ton of features in the simplest way possible, however there
 
 - FluttermojiCircleAvatar would render an avatar with the default set of options until customized and saved by the user.
 - FluttermojiCustomizer updates the preview in real-time however changes must be saved by tapping the Save icon built into the widget itself.
+- Use the `canvaskit` renderer when building for web, the default `html` renderer will not work with SVGs.
+- The fluttermoji's attributes are saved to local app/browser storage. Clearing app/browser data would mean clearing these attributes as well.
 - FluttermojiCustomizer uses a Scaffold whose height is set to _0.4*screen height_ by default, if you do not pass a value to the ```scaffoldHeight``` property make sure to place the widget properly.
 - If you plan on using FluttermojiCustomizer in Landscape mode, manually pass in the desired width for the widget in the ```scaffoldWidth``` property.
-- The Fluttermoji's attributes are saved to local app storage. Clearing app data would mean clearing these attributes as well.
 
 ## Attributions
 

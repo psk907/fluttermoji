@@ -1,3 +1,7 @@
+## [0.2.3] - 03/12/2021
+
+ * Updates dependency versions
+
 ## [0.2.2] - 11/10/2021
 
  * Adds toggle to show/hide save button widget in FluttermojiCustomizer widget.
