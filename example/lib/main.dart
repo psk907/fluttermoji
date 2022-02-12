@@ -1,6 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:fluttermoji/fluttermoji.dart';
-import 'package:flutter/foundation.dart' show TargetPlatform;
+import 'package:fluttermoji/fluttermojiThemeData.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Fluttermoji Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+      // darkTheme: ThemeData.dark(),
       home: MyHomePage(title: 'Fluttermoji'),
     );
   }
@@ -30,12 +32,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    TargetPlatform platform = Theme.of(context).platform;
-    var isWeb = platform != TargetPlatform.android &&
-        platform != TargetPlatform.iOS &&
-        platform != TargetPlatform.macOS &&
-        platform != TargetPlatform.windows &&
-        platform != TargetPlatform.fuchsia;
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title!),
@@ -97,31 +93,6 @@ class _MyHomePageState extends State<MyHomePage> {
           SizedBox(
             height: 100,
           ),
-          (isWeb)
-              ? Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(
-                      Icons.warning_rounded,
-                      size: 50,
-                    ),
-                    SizedBox(
-                      width: 25,
-                    ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Text("Web preview is unstable at the moment\n",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          Text(
-                              "This demo may not work on your mobile browser,\nUse your Desktop browser or install the app."),
-                        ],
-                      ),
-                    )
-                  ],
-                )
-              : SizedBox(height: 0),
         ],
       ),
     );
@@ -133,30 +104,47 @@ class NewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var platform = Theme.of(context).platform;
-    var isWeb = platform != TargetPlatform.android ||
-        platform != TargetPlatform.iOS ||
-        platform != TargetPlatform.fuchsia;
-
+    var _width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(),
-      body: ListView(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 30),
-            child: FluttermojiCircleAvatar(
-              radius: 100,
-            ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 30),
+                child: FluttermojiCircleAvatar(
+                  radius: 100,
+                  backgroundColor: Colors.grey[200],
+                ),
+              ),
+              SizedBox(
+                width: min(600, _width * 0.85),
+                child: Row(
+                  children: [
+                    Text(
+                      "Customize:",
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                    Spacer(),
+                    FluttermojiSaveWidget(),
+                  ],
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 30),
+                child: FluttermojiCustomizer(
+                  scaffoldWidth: min(600, _width * 0.85),
+                  autosave: false,
+                  theme: FluttermojiThemeData(
+                      boxDecoration: BoxDecoration(boxShadow: [BoxShadow()])),
+                ),
+              ),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 30),
-            child: FluttermojiCustomizer(
-              //scaffoldHeight: 400,
-              showSaveWidget: true,
-               scaffoldWidth: isWeb ? 600 : 0,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

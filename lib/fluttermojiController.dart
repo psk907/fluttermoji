@@ -21,7 +21,15 @@ import 'fluttermoji_assets/top/hairStyles/hairStyle.dart';
 /// Exposes certain static functions for use by the developer
 class FluttermojiController extends GetxController {
   var fluttermoji = "".obs;
-  Map<String?, dynamic> selectedIndexes = <String?, dynamic>{};
+
+  /// Stores the option selected by the user for each attribute
+  /// where the key represents the Attribute
+  /// and the value represents the index of the selected option.
+  ///
+  /// Eg: selectedIndexes["eyes"] gives the index of
+  /// the kind of eyes picked by the user
+  Map<String?, dynamic> selectedOptions = <String?, dynamic>{};
+
   @override
   void onInit() {
     // called immediately after the widget is allocated memory
@@ -31,7 +39,7 @@ class FluttermojiController extends GetxController {
 
   void init() async {
     Map<String?, int> _tempIndexes = await getFluttermojiOptions();
-    selectedIndexes = _tempIndexes;
+    selectedOptions = _tempIndexes;
     update();
     fluttermoji.value = getFluttermojiFromOptions();
     update();
@@ -49,7 +57,7 @@ class FluttermojiController extends GetxController {
   }
 
   /// Restore controller state
-  /// with the latest SAVED version of [fluttermoji] and [selectedIndexes]
+  /// with the latest SAVED version of [fluttermoji] and [selectedOptions]
   void restoreState() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
 
@@ -59,14 +67,14 @@ class FluttermojiController extends GetxController {
           jsonEncode(defaultFluttermojiOptions),
         );
 
-    selectedIndexes = await getFluttermojiOptions();
+    selectedOptions = await getFluttermojiOptions();
     update();
   }
 
   String _getFluttermojiProperty(String type) {
     return fluttermojiProperties[type]!
         .property!
-        .elementAt(selectedIndexes[type] as int);
+        .elementAt(selectedOptions[type] as int);
   }
 
   ///  Accepts a String [fluttermoji]
@@ -83,11 +91,11 @@ class FluttermojiController extends GetxController {
     await pref.setString('fluttermoji', fluttermojiNew);
     fluttermoji.value = fluttermojiNew;
     await pref.setString(
-        'fluttermojiSelectedOptions', jsonEncode(selectedIndexes));
+        'fluttermojiSelectedOptions', jsonEncode(selectedOptions));
     update();
   }
 
-  /// Generates a [String] fluttermoji from [selectedIndexes] pref
+  /// Generates a [String] fluttermoji from [selectedOptions] pref
   String getFluttermojiFromOptions() {
     String _fluttermojiStyle =
         fluttermojiStyle[_getFluttermojiProperty('style')]!;
@@ -153,12 +161,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
           Map.from(defaultFluttermojiOptions);
       await pref.setString(
           'fluttermojiSelectedOptions', jsonEncode(_fluttermojiOptionsMap));
-      selectedIndexes = _fluttermojiOptionsMap;
+      selectedOptions = _fluttermojiOptionsMap;
 
       update();
       return _fluttermojiOptionsMap;
     }
-    selectedIndexes = Map.from(jsonDecode(_fluttermojiOptions));
+    selectedOptions = Map.from(jsonDecode(_fluttermojiOptions));
     update();
     return Map.from(jsonDecode(_fluttermojiOptions));
   }
@@ -177,7 +185,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
         return '''<svg width="100px" height="120px" viewBox="30 100 200 250" >''' +
             Clothes.generateClothes(
                 clotheType: ClotheType.elementAt(attributeValueIndex!),
-                clColor: ClotheColor[selectedIndexes['clotheColor']])! +
+                clColor: ClotheColor[selectedOptions['clotheColor']])! +
             '''</svg>''';
 
       case 'clotheColor':
@@ -191,7 +199,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
         return '''<svg width="20px" width="100px" height="100px" viewBox="10 0 250 250">''' +
             HairStyle.generateHairStyle(
                 hairType: TopType[attributeValueIndex!],
-                hColor: HairColor[selectedIndexes['hairColor']])! +
+                hColor: HairColor[selectedOptions['hairColor']])! +
             '''</svg>''';
 
       case 'hairColor':
@@ -205,7 +213,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
         return '''<svg width="20px" height="20px" viewBox="0 -40 112 180" >''' +
             FacialHair.generateFacialHair(
                 facialHairType: FacialHairType[attributeValueIndex!],
-                fhColor: FacialHairColor[selectedIndexes['facialHairColor']])! +
+                fhColor: FacialHairColor[selectedOptions['facialHairColor']])! +
             '''</svg>''';
 
       case 'facialHairColor':
@@ -296,4 +304,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
         return emptySVGIcon;
     }
   }
+
+  @Deprecated(
+      'No longer used by the library, please use the field `selectedOptions` instead.')
+  Map<String?, dynamic> selectedIndexes = <String?, dynamic>{};
 }

@@ -22,13 +22,16 @@ final Map<String, FluttermojiPropertyItem> fluttermojiProperties = {
   "skinColor": FluttermojiPropertyItem(title: "Skin", property: SkinColor),
 };
 
-class ExpandedFluttermojiCardItem {
+/// Models the metadata needed for rendering widgets in the UI
+///
+/// 'ExpandedFluttermojiCardItem' has been renamed to Attribute Item
+class AttributeItem {
   String title;
   String? key;
   String? iconAsset;
-  double iconsize;
-  ExpandedFluttermojiCardItem(
-      {this.iconsize = 0, this.title = "Unnamed", this.key, this.iconAsset});
+  double? iconsize;
+  AttributeItem(
+      {this.iconsize, this.title = "Unnamed", this.key, this.iconAsset});
 }
 
 class FluttermojiPropertyItem extends ChangeNotifier {
