@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:fluttermoji/fluttermoji.dart';
-import 'package:fluttermoji/fluttermojiThemeData.dart';
 
 void main() {
   runApp(MyApp());
