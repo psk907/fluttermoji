@@ -3,21 +3,26 @@
 
 A light-weight and highly customizable SVG graphic set for Flutter, which provides a Customizer Widget, CircleAvatar and other utility functions.
 
-This package provides you two easy-to-use widgets -
+This package provides you three easy-to-use widgets -
 
 | Name | Description | Screenshot | 
 |--------|----------|---------- |
 |FluttermojiCircleAvatar | Use your fluttermoji anywhere in your Flutter app with a simple customizable widget. Supports material dark theme too.| ![1608830483994](https://user-images.githubusercontent.com/37346450/103071632-009ec100-45ea-11eb-97c4-96c9ec67e204.gif)
-|FluttermojiCustomizer | A complete personalization suit that offers previews of each individual component and a modern UI with material light and dark theme support.|![1608827561239](https://user-images.githubusercontent.com/37346450/103100686-c0ffc580-4639-11eb-9fc9-9fe5c0bf7dcc.jpg)
+|FluttermojiCustomizer | A comprehensize UI to customize the user's fluttermoji. Offers previews of each individual component and whose looks can be tweaked with a `FluttermojiThemeData`|![1608827561239](https://user-images.githubusercontent.com/37346450/154008536-a687828c-dc9d-4a62-aa11-b800d4fb7763.jpg)
+|FluttermojiSaveWidget | Renders a save button by default OR can be used as an [InkWell] wrapper for the [child] widget.|![1608827561239](https://user-images.githubusercontent.com/37346450/154008545-8325af7b-58a2-4419-8544-929ffbdbb9ff.jpg)
+
+******
+The appearance of the widgets can be tweaked with `FluttermojiThemeData`. It let's you change things like the customizer's background colours, the box decoration etc.
+******
 
 Use the given utility functions to send and receive Fluttermoji data from your server/DB efficiently.
 
 | Function Prototype | Description | 
 |------------------|---------------|
 |String decodeFluttermojifromString(String encodedData)| Decode your string containing the attributes to a SVG and render it by enclosing this string with a SvgPicture.string() | 
-| Future\<Map> encodeMySVGtoMap() | Retrieve the local user's fluttermoji attributes from local storage and encodes them to a Map of attributes and returns a Future, you have to await on function call. |
-|Future\<String> encodeMySVGtoString() | Retrieve the local user's fluttermoji attributes from local storage and encodes them to a String containing a map of attributes and returns a Future, you have to await on function call. | 
-| Future<List<bool>> clearFluttermoji() | Erase fluttermoji String and Map from local storage |
+| Future\<Map> encodeMySVGtoMap() | Encodes the local user's fluttermoji to a Map denoting the selected attributes |
+|Future\<String> encodeMySVGtoString() | Encodes the local user's fluttermoji to a Map denoting the selected attributes , and stringifies the result before returning the value. | 
+| Future<List<bool>> clearFluttermoji() | Erases local user's fluttermoji SVG String and selection from local storage |
 	
 SVG Assets used are derived from [getavataaars.com](https://getavataaars.com/) .
 
@@ -58,12 +63,11 @@ That's all it takes, simple right ? The two widgets communicate with each other 
 ##  Usage Guidelines
 The package offers a ton of features in the simplest way possible, however there are some points worth noting.
 
-- FluttermojiCircleAvatar would render an avatar with the default set of options until customized and saved by the user.
-- FluttermojiCustomizer updates the preview in real-time however changes must be saved by tapping the Save icon built into the widget itself.
+- `FluttermojiCircleAvatar` only renders the local user's avatar. To display the avatar of other users', you'll have to use the `SvgPicture.string()` method from `flutter_svg` .
+- `FluttermojiCircleAvatar` would render a default avatar until customized and saved by the local user for the first time.
 - Use the `canvaskit` renderer when building for web, the default `html` renderer will not work with SVGs.
 - The fluttermoji's attributes are saved to local app/browser storage. Clearing app/browser data would mean clearing these attributes as well.
-- FluttermojiCustomizer uses a Scaffold whose height is set to _0.4*screen height_ by default, if you do not pass a value to the ```scaffoldHeight``` property make sure to place the widget properly.
-- If you plan on using FluttermojiCustomizer in Landscape mode, manually pass in the desired width for the widget in the ```scaffoldWidth``` property.
+- You can create a `FluttermojiThemeData` instance to configure the look and feel of the widgets to your liking.
 
 ## Attributions
 
@@ -73,7 +77,7 @@ The package offers a ton of features in the simplest way possible, however there
 
 ## Community
 If you find any issues or have some feedback, please raise the same on the GitHub repo or contact me directly.
-Share your creative implementation of Fluttermoji with me and I might feature them on this page.
+
 Do leave a thumbs up if you liked it.
 
 

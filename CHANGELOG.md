@@ -1,15 +1,24 @@
+## [1.0.0] - 15/02/2022
+ * Adds `FluttermojiThemeData` and `FluttermojiSaveWidget` to the library.
+ * Fixes some visual glithes in the appbar of the `FluttermojiCustomizer`.
+ * Minor internal refactoring.
+ * Updates dependency versions
+ *  > BREAKING CHANGES - The customizer widget no longer has the top row with "Customize" and the save button, and the `showSaveWidget` property has been removed. Refer the doc comments for more details.
+
+*****
+
 ## [0.2.3] - 03/12/2021
 
  * Updates dependency versions
 
 ## [0.2.2] - 11/10/2021
 
- * Adds toggle to show/hide save button widget in FluttermojiCustomizer widget.
+ * Adds toggle to show/hide save button widget in `FluttermojiCustomizer` widget.
   
 ## [0.2.1] - 03/05/2021
 
  * Fixes bug where preview and avatars don't revert to saved version after unsaved edits
- * Adds clearFluttermoji() to FluttermojiFunctions
+ * Adds `clearFluttermoji()` to FluttermojiFunctions
  * Some optimizations
 
 ## [0.2.0] - 08/04/2021
