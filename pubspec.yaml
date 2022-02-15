@@ -1,7 +1,5 @@
 name: fluttermoji
-description: A light-weight and highly customizable SVG graphic set for Flutter
-  which generates avatars and provides a Customizer Widget, personalized
-  CircleAvatar and other utility functions.
+description: A light-weight and highly customizable SVG avatar library for Flutter apps. Provides a Customizer Widget, CircleAvatar and other utility functions that are ready-to-use.
 version: 1.0.0
 # author: Suraj Kumar
 homepage: https://github.com/psk907/fluttermoji

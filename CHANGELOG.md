@@ -3,7 +3,10 @@
  * Fixes some visual glithes in the appbar of the `FluttermojiCustomizer`.
  * Minor internal refactoring.
  * Updates dependency versions
- *  > BREAKING CHANGES - The customizer widget no longer has the top row with "Customize" and the save button, and the `showSaveWidget` property has been removed. Refer the doc comments for more details.
+ * BREAKING CHANGES 
+   *  The customizer widget no longer has the top row with "Customize" and the save button, and the `showSaveWidget` property has been removed.
+   *  The widget's do not set to Material light/dark system theme automatically anymore. This must be implemented using the [theme] property.
+   *  Refer the doc comments for more details.
 
 *****
 
