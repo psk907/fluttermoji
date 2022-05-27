@@ -83,7 +83,7 @@ class FluttermojiController extends GetxController {
   ///  adds the new name to controller
   ///
   ///  Thereby updating all the states which are listening to controller
-  void setFluttermoji({String fluttermojiNew = ''}) async {
+  Future<void> setFluttermoji({String fluttermojiNew = ''}) async {
     if (fluttermojiNew.isEmpty) {
       fluttermojiNew = getFluttermojiFromOptions();
     }
