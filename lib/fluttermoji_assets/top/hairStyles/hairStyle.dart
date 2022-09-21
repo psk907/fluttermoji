@@ -97,7 +97,7 @@ class HairStyle {
 									<use xlink:href="#react-path-5681"></use>
 								</mask>
 								<use id="Hijab-Mask" stroke="none" fill="#3B6BAD" fill-rule="evenodd" xlink:href="#react-path-5681"></use>
-								<g id="Color/Palette/Gray-01" mask="url(#react-mask-5679)" fill-rule="evenodd" fill="#25557C">
+								<g id="Color/Palette/Gray-01" mask="url(#react-mask-5679)" fill-rule="evenodd" fill="$colorHex">
 									<rect id="🖍Color" x="0" y="0" width="264" height="280"></rect>
 								</g>
 								<path d="M72.0744416,104.959767 C71.3690172,101.246903 71,97.4161983 71,93.5 C71,59.5344879 98.7583455,32 133,32 C167.241654,32 195,59.5344879 195,93.5 C195,97.4161983 194.630983,101.246903 193.925558,104.959767 C192.341315,72.6827942 165.669927,47 133,47 C100.330073,47 73.6586845,72.6827942 72.0744428,104.959774 Z" id="Band" stroke="none" fill-opacity="0.5" fill="#FFFFFF" fill-rule="evenodd" mask="url(#react-mask-5679)"></path>
@@ -1029,7 +1029,7 @@ class HairStyle {
 											<use xlink:href="#react-path-93451"></use>
 										</mask>
 										<use id="Turban-Mask" fill="#124C74" xlink:href="#react-path-93451"></use>
-										<g id="Color/Palette/Gray-01" mask="url(#react-mask-93448)" fill-rule="evenodd" fill="#25557C">
+										<g id="Color/Palette/Gray-01" mask="url(#react-mask-93448)" fill-rule="evenodd" fill="$colorHex">
 											<rect id="🖍Color" x="0" y="0" width="264" height="280"></rect>
 										</g>
 									</g>
