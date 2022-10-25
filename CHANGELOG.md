@@ -1,3 +1,6 @@
+## [1.0.1] - 25/10/2022
+ * Minor bug fix [#22](https://github.com/psk907/fluttermoji/pull/22#issue-1250729612)
+
 ## [1.0.0] - 15/02/2022
  * Adds `FluttermojiThemeData` and `FluttermojiSaveWidget` to the library.
  * Fixes some visual glithes in the appbar of the `FluttermojiCustomizer`.

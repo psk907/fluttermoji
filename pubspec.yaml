@@ -1,6 +1,6 @@
 name: fluttermoji
 description: A light-weight and highly customizable SVG avatar library for Flutter apps. Provides a Customizer Widget, CircleAvatar and other utility functions that are ready-to-use.
-version: 1.0.0
+version: 1.0.1
 # author: Suraj Kumar
 homepage: https://github.com/psk907/fluttermoji
 
@@ -10,9 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^1.0.0
-  get: ^4.5.1
-  shared_preferences: ^2.0.9
+  flutter_svg: ^1.1.6
+  get: ^4.6.5
+  shared_preferences: ^2.0.15
 dev_dependencies:
   flutter_test:
     sdk: flutter

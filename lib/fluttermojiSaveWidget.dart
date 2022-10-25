@@ -52,7 +52,7 @@ class FluttermojiSaveWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () async{
+      onTap: () async {
         await fluttermojiController.setFluttermoji();
         if (onTap != null) onTap!();
       },
