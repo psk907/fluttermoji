@@ -290,9 +290,11 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
                 (widget.scaffoldHeight != null
                     ? widget.scaffoldHeight! / heightFactor * 0.03
                     : size.height * 0.03),
-            color: attributeIndex == tabController.index
-                ? widget.theme.selectedIconColor
-                : widget.theme.unselectedIconColor,
+            colorFilter: ColorFilter.mode(
+                attributeIndex == tabController.index
+                    ? widget.theme.selectedIconColor
+                    : widget.theme.unselectedIconColor,
+                BlendMode.srcIn),
             semanticsLabel: attribute.title,
           ));
 

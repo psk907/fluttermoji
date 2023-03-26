@@ -1,3 +1,6 @@
+## [1.0.2] - 26/03/2023
+ * Upgrades dependencies
+
 ## [1.0.1] - 25/10/2022
  * Minor bug fix [#22](https://github.com/psk907/fluttermoji/pull/22#issue-1250729612)
 
