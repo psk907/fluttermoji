@@ -171,6 +171,17 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     return Map.from(jsonDecode(_fluttermojiOptions));
   }
 
+  /// set Fluttermoji options
+  Future<void> setFluttermojiOptions(
+    Map<String, dynamic> options,
+  ) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setString('fluttermojiSelectedOptions', jsonEncode(options));
+    selectedOptions = options;
+
+    update();
+  }
+
   String? getComponentTitle(String attributeKey, int attriibuteValueIndex) {
     return fluttermojiProperties[attributeKey]!
         .property
