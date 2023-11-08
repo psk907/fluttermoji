@@ -49,6 +49,17 @@ class FluttermojiFunctions {
     ]);
   }
 
+  /// set Fluttermoji options
+  Future<void> setFluttermojiOptions(
+    Map<String, int> options,
+  ) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setString('fluttermojiSelectedOptions', jsonEncode(options));
+    // selectedOptions = options;
+
+    // update();
+  }
+
   /// Decode your string containing the attributes to a SVG and render it
   /// by enclosing this string with a SvgPicture.string()
   String decodeFluttermojifromString(String encodedData) {
