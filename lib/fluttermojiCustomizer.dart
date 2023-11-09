@@ -34,6 +34,8 @@ class FluttermojiCustomizer extends StatefulWidget {
     FluttermojiThemeData? theme,
     List<String>? attributeTitles,
     List<String>? attributeIcons,
+    this.onChange,
+    this.initialOptions,
     this.autosave = true,
   })  : assert(
           attributeTitles == null || attributeTitles.length == attributesCount,
@@ -52,6 +54,8 @@ class FluttermojiCustomizer extends StatefulWidget {
 
   final double? scaffoldHeight;
   final double? scaffoldWidth;
+  final void Function(Map<String?, dynamic>)? onChange;
+  final Map<String, dynamic>? initialOptions;
 
   /// Configuration for the overall visual theme for this widget
   /// and the components within it.
@@ -114,6 +118,13 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
     tabController.addListener(() {
       setState(() {});
     });
+
+    final initialOptions = widget.initialOptions;
+    if (initialOptions != null) {
+      _setInitialOptions(
+        initialOptions,
+      );
+    }
   }
 
   @override
@@ -130,6 +141,24 @@ class _FluttermojiCustomizerState extends State<FluttermojiCustomizer>
       });
       fluttermojiController.updatePreview();
       if (widget.autosave) fluttermojiController.setFluttermoji();
+    }
+    final onChange = widget.onChange;
+    if (onChange != null) {
+      onChange(fluttermojiController.selectedOptions);
+    }
+  }
+
+  void _setInitialOptions(
+    Map<String, dynamic> options,
+  ) {
+    setState(() {
+      fluttermojiController.selectedOptions = options;
+    });
+    fluttermojiController.updatePreview();
+    if (widget.autosave) fluttermojiController.setFluttermoji();
+    final onChange = widget.onChange;
+    if (onChange != null) {
+      onChange(options);
     }
   }
 
