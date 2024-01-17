@@ -78,7 +78,7 @@ The package offers a ton of features in the simplest way possible, however there
 ## Community
 If you find any issues or have some feedback, please raise the same on the GitHub repo or contact me directly.
 
-Do leave a thumbs up if you liked it.
+Do leave a 👍 if you liked it 
 
 
 **Happy Fluttering ; )**
