@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: .github/workflows/
+    schedule:
+      interval: weekly
+      day: friday
+    labels:
+      - "dependabot"
+  - package-ecosystem: pub
+    directory: /
+    schedule:
+      interval: weekly
+      day: friday
+    labels:
+      - "dependabot"
+      - "version: Patch"
