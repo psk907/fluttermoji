@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo -e "\033[0;34m-- Check commit message format --\033[0m"
+MESSAGE=$(cat $1)
+COMMITFORMAT="^(feat|fix|docs|style|refactor|test|chore|perf|other)(\((.*)\))?: (.*)$"
+
+if [[ $MESSAGE =~ "^(Merge|Revert)" ]]; then
+  echo "Merge or revert commit. Skip"
+  exit 0
+fi
+
+if ! [[ "$MESSAGE" =~ $COMMITFORMAT ]]; then
+  echo "Your commit was rejected due to the commit message. Skipping..."
+  echo ""
+  echo "Please use the following format:"
+  echo "feat: feature example comment"
+  echo "fix(ui): #4321 bugfix example comment"
+  echo ""
+  echo "More details on https://www.conventionalcommits.org/en/v1.0.0/"
+  exit 1
+fi

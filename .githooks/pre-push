@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo -e "\033[0;34m-- Flutter analyze --\033[0m"
+flutter analyze
+
